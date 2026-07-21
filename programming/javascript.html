@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Interview Questions for Freshers (with Answers) | InterviewForge</title>
+  <meta name="description" content="JavaScript interview questions for freshers and experienced developers — beginner to advanced, with code examples, explanations, and a free downloadable PDF.">
+  <meta name="keywords" content="JavaScript interview questions for freshers, JavaScript OOP questions, JavaScript coding interview questions">
+  <link rel="canonical" href="https://www.interviewforge.example.com/programming/javascript.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="JavaScript Interview Questions for Freshers (with Answers)">
+  <meta property="og:description" content="Beginner to advanced JavaScript interview questions with code examples.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-cat-type="lang" data-cat-id="javascript">
+  <header id="site-header"></header>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" id="breadcrumb"></nav>
+      <h1 id="page-title">JavaScript Interview Questions</h1>
+      <p id="page-overview">Loading questions…</p>
+      <div class="page-hero-actions">
+        <button class="btn btn-primary" id="download-pdf-btn">⬇ Download PDF</button>
+        <a href="#questions" class="btn btn-outline">Jump to Questions</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="topic-layout">
+      <div>
+        <div class="ad-slot ad-inline" style="margin-top:0;">Advertisement</div>
+        <div class="filter-bar" id="filter-bar"></div>
+        <div class="qa-list" id="questions"></div>
+        <div class="ad-slot ad-inline">Advertisement</div>
+        <section>
+          <h2 class="section-heading" style="font-size:1.4rem;">Frequently Asked Questions</h2>
+          <div id="faq-list"></div>
+        </section>
+      </div>
+      <aside class="topic-sidebar">
+        <div class="sidebar-box">
+          <h4>Other Languages</h4>
+          <ul id="related-langs"></ul>
+        </div>
+        <div class="ad-slot ad-sidebar">Advertisement</div>
+        <div class="sidebar-box">
+          <h4>Also Prepare</h4>
+          <ul>
+            <li><a href="../hr.html">HR Interview Questions</a></li>
+            <li><a href="../aptitude.html">Aptitude Preparation</a></li>
+            <li><a href="../resume.html">Resume & Career Tips</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/pdf-generator.js"></script>
+  <script>
+    async function onPageReady() {
+      const catId = document.body.dataset.catId;
+      const catalog = await loadJSON('data/catalog.json');
+      const meta = catalog.programming.find(p => p.id === catId);
+      const items = await loadJSON(meta.file);
+
+      document.title = `${meta.name} Interview Questions for Freshers (with Answers) | InterviewForge`;
+      document.getElementById('page-title').textContent = `${meta.name} Interview Questions`;
+      document.getElementById('page-overview').textContent = `${items.length} handpicked ${meta.name} questions covering beginner, intermediate, and advanced levels — each with a clear explanation and code example where relevant.`;
+      document.getElementById('download-pdf-btn').innerHTML = `⬇ Download ${meta.name} Interview Questions PDF`;
+
+      injectBreadcrumbSchema([
+        { name: 'Home', url: SITE.root + 'index.html' },
+        { name: 'Programming', url: SITE.root + 'index.html#programming' },
+        { name: meta.name, url: location.href }
+      ]);
+      document.getElementById('breadcrumb').innerHTML = `<a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../index.html">Programming</a><span aria-hidden="true">/</span><span>${meta.name}</span>`;
+
+      document.getElementById('related-langs').innerHTML = catalog.programming.filter(p => p.id !== catId).map(p => `<li><a href="${p.id}.html">${p.name} Questions</a></li>`).join('');
+
+      const levels = ['Beginner', 'Intermediate', 'Advanced'];
+      let activeLevel = 'all';
+      function renderFiltered() {
+        const filtered = activeLevel === 'all' ? items : items.filter(q => q.level === activeLevel);
+        renderQuestionList(document.getElementById('questions'), filtered, { catType: 'lang', catId });
+      }
+      document.getElementById('filter-bar').innerHTML = ['all', ...levels].map(l =>
+        `<button class="filter-chip ${l === 'all' ? 'active' : ''}" data-level="${l}">${l === 'all' ? 'All Levels' : l}</button>`
+      ).join('');
+      document.querySelectorAll('.filter-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          activeLevel = chip.dataset.level;
+          renderFiltered();
+        });
+      });
+      renderFiltered();
+
+      injectFAQSchema(items);
+      document.getElementById('faq-list').innerHTML = items.slice(0, 6).map(q => `
+        <details class="faq-item"><summary>${q.title}</summary><p>${q.answer}</p></details>`).join('');
+
+      document.getElementById('download-pdf-btn').addEventListener('click', function () {
+        downloadCategoryPDF({ categoryName: `${meta.name} Interview Questions`, items, triggerButton: this });
+      });
+    }
+  </script>
+</body>
+</html>
