@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.interviewforge.example.com/sitemap.xml
+
+Disallow: /bookmarks.html

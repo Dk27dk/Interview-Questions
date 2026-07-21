@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bookmarked Questions | InterviewForge</title>
+  <meta name="description" content="Your saved interview questions, stored locally in your browser for quick revision.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>My Bookmarks</span></nav>
+      <h1>My Bookmarked Questions</h1>
+      <p>Saved locally in this browser — bookmark any question with the ☆ icon to revise it later. Your progress: <strong id="progress-count">0</strong> questions viewed.</p>
+    </div>
+  </section>
+
+  <main class="container section">
+    <div id="bookmark-list" class="grid grid-3"></div>
+    <div id="empty-state" class="no-results" style="display:none;">
+      You haven't bookmarked any questions yet. Browse any <a href="programming/java.html">programming</a> or <a href="company/tcs.html">company</a> page and tap the ☆ next to a question to save it here.
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="js/script.js"></script>
+  <script>
+    function onPageReady() {
+      document.getElementById('progress-count').textContent = getProgressCount();
+      const marks = getBookmarks();
+      const entries = Object.values(marks).sort((a, b) => b.savedAt - a.savedAt);
+      if (!entries.length) {
+        document.getElementById('empty-state').style.display = 'block';
+        return;
+      }
+      function resolveUrl(e) {
+        if (e.catType === 'company') return `company/${e.catId}.html`;
+        if (e.catType === 'lang') return `programming/${e.catId}.html`;
+        if (e.catType === 'hr') return 'hr.html';
+        if (e.catType === 'aptitude') return 'aptitude.html';
+        return 'index.html';
+      }
+      document.getElementById('bookmark-list').innerHTML = entries.map(e => `
+        <a href="${resolveUrl(e)}" class="card">
+          <div class="card-meta"><span>${e.catType} · ${e.catId}</span></div>
+          <h3 style="margin-top:10px;">${e.title}</h3>
+        </a>`).join('');
+    }
+  </script>
+</body>
+</html>

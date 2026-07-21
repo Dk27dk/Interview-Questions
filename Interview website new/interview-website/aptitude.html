@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aptitude Interview Questions with Solutions | InterviewForge</title>
+  <meta name="description" content="Practice quantitative aptitude, logical reasoning, and verbal ability questions with step-by-step solutions for IT company placement tests.">
+  <meta name="keywords" content="aptitude interview questions with solutions, quantitative aptitude questions, logical reasoning questions, verbal ability questions">
+  <link rel="canonical" href="https://www.interviewforge.example.com/aptitude.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Aptitude Interview Questions with Solutions">
+  <meta property="og:description" content="Quantitative, logical reasoning, and verbal ability questions with step-by-step solutions.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-cat-type="aptitude" data-cat-id="aptitude">
+  <header id="site-header"></header>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Aptitude Preparation</span></nav>
+      <h1>Aptitude Preparation</h1>
+      <p>Quantitative aptitude, logical reasoning, and verbal ability questions with clear, step-by-step solutions — the exact pattern used in TCS, Infosys, Cognizant, and Wipro assessments.</p>
+      <div class="page-hero-actions">
+        <button class="btn btn-primary" id="download-pdf-btn">⬇ Download Aptitude Questions PDF</button>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="topic-layout">
+      <div>
+        <div class="ad-slot ad-inline" style="margin-top:0;">Advertisement</div>
+        <div class="filter-bar" id="filter-bar"></div>
+        <div class="qa-list" id="questions"></div>
+        <div class="ad-slot ad-inline">Advertisement</div>
+      </div>
+      <aside class="topic-sidebar">
+        <div class="sidebar-box">
+          <h4>How to Prepare</h4>
+          <ul>
+            <li>Practice 10 questions daily, timed</li>
+            <li>Memorize squares, cubes up to 30</li>
+            <li>Learn shortcut formulas for time & work</li>
+            <li>Read one editorial daily for verbal ability</li>
+          </ul>
+        </div>
+        <div class="ad-slot ad-sidebar">Advertisement</div>
+        <div class="sidebar-box">
+          <h4>Also Prepare</h4>
+          <ul>
+            <li><a href="hr.html">HR Interview Questions</a></li>
+            <li><a href="resume.html">Resume & Career Tips</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/pdf-generator.js"></script>
+  <script>
+    async function onPageReady() {
+      const items = await loadJSON('data/aptitude.json');
+      const categories = [...new Set(items.map(q => q.category))];
+      let active = 'all';
+      function renderFiltered() {
+        const filtered = active === 'all' ? items : items.filter(q => q.category === active);
+        renderQuestionList(document.getElementById('questions'), filtered, { catType: 'aptitude', catId: 'aptitude' });
+      }
+      document.getElementById('filter-bar').innerHTML = ['all', ...categories].map(c =>
+        `<button class="filter-chip ${c === 'all' ? 'active' : ''}" data-cat="${c}">${c === 'all' ? 'All Questions' : c}</button>`
+      ).join('');
+      document.querySelectorAll('.filter-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          active = chip.dataset.cat;
+          renderFiltered();
+        });
+      });
+      renderFiltered();
+
+      document.getElementById('download-pdf-btn').addEventListener('click', function () {
+        downloadCategoryPDF({ categoryName: 'Aptitude Preparation Questions', items, triggerButton: this });
+      });
+    }
+  </script>
+</body>
+</html>
