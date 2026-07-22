@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.interviewclear.example.com/sitemap.xml
+Sitemap: https://interview-questions-sable.vercel.app/sitemap.xml
 
 Disallow: /bookmarks.html
