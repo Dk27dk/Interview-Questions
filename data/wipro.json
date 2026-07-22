@@ -1,0 +1,604 @@
+[
+  {
+    "id": 1,
+    "section": "online-test",
+    "title": "What is included in the Wipro Elite NTH online assessment?",
+    "difficulty": "Easy",
+    "answer": "It typically includes Aptitude (Quant, Logical, Verbal), an Essay Writing section on a current topic, and a Coding round with one or two programming problems."
+  },
+  {
+    "id": 2,
+    "section": "online-test",
+    "title": "How should I approach the Wipro essay writing section?",
+    "difficulty": "Medium",
+    "answer": "Pick a clear stance quickly, structure the essay with an introduction, 2-3 supporting paragraphs, and a conclusion, and stay within the word limit \u2014 graders look for clarity of thought and grammar over flowery language.",
+    "tips": "Practice writing 200-250 word essays on tech and social topics within 10-12 minutes."
+  },
+  {
+    "id": 3,
+    "section": "technical",
+    "title": "What is the difference between == and .equals() in Java?",
+    "difficulty": "Medium",
+    "answer": "== compares object references (memory addresses) for objects, or actual values for primitives, while .equals() compares the logical content of two objects, which classes like String override for meaningful comparison.",
+    "example": "String a = new String(\"hi\");\nString b = new String(\"hi\");\nSystem.out.println(a == b); // false\nSystem.out.println(a.equals(b)); // true"
+  },
+  {
+    "id": 4,
+    "section": "technical",
+    "title": "What are SQL JOINs? Explain the main types.",
+    "difficulty": "Medium",
+    "answer": "A JOIN combines rows from two or more tables based on a related column. INNER JOIN returns only matching rows, LEFT JOIN returns all rows from the left table plus matches from the right, RIGHT JOIN does the reverse, and FULL OUTER JOIN returns all rows from both, with NULLs where there's no match.",
+    "example": "SELECT e.name, d.dept_name\nFROM Employee e\nLEFT JOIN Department d ON e.dept_id = d.id;"
+  },
+  {
+    "id": 5,
+    "section": "technical",
+    "title": "What is the difference between white-box and black-box testing?",
+    "difficulty": "Easy",
+    "answer": "White-box testing examines the internal code structure and logic (used by developers), while black-box testing tests functionality without knowledge of internal code, focusing purely on inputs and expected outputs (used by QA testers)."
+  },
+  {
+    "id": 6,
+    "section": "technical",
+    "title": "What is multithreading and what problem can it cause?",
+    "difficulty": "Medium",
+    "answer": "Multithreading allows multiple threads to execute concurrently within a program, improving responsiveness and resource utilization. It can cause race conditions, where two threads access shared data simultaneously and produce inconsistent results, usually solved with synchronization."
+  },
+  {
+    "id": 7,
+    "section": "coding",
+    "title": "Write a program to check if a string contains only digits.",
+    "difficulty": "Easy",
+    "answer": "Iterate through each character and verify it falls within the '0'-'9' range, or use a built-in method like isdigit() in Python.",
+    "example": "def is_all_digits(s):\n    return s.isdigit()"
+  },
+  {
+    "id": 8,
+    "section": "coding",
+    "title": "Write a program to find the GCD of two numbers.",
+    "difficulty": "Easy",
+    "answer": "Use the Euclidean algorithm: repeatedly replace the larger number with the remainder of dividing it by the smaller number until the remainder is 0.",
+    "example": "int gcd(int a, int b){\n  if(b==0) return a;\n  return gcd(b, a%b);\n}"
+  },
+  {
+    "id": 9,
+    "section": "coding",
+    "title": "Write a query to fetch employees who earn more than the average salary in their department.",
+    "difficulty": "Hard",
+    "answer": "Use a correlated subquery that computes the average salary per department and compares each employee's salary against it.",
+    "example": "SELECT e.name, e.salary, e.dept_id\nFROM Employee e\nWHERE e.salary > (\n  SELECT AVG(salary) FROM Employee WHERE dept_id = e.dept_id\n);"
+  },
+  {
+    "id": 10,
+    "section": "hr",
+    "title": "What are your strengths and weaknesses?",
+    "difficulty": "Easy",
+    "answer": "Choose a strength directly relevant to the role with a quick example, and a genuine but manageable weakness paired with a concrete step you're taking to improve it.",
+    "example": "\"My strength is breaking down complex problems into smaller steps \u2014 it helped me finish a compiler mini-project on schedule. A weakness I'm working on is public speaking, so I've started presenting my project demos to seniors for practice.\""
+  },
+  {
+    "id": 11,
+    "section": "hr",
+    "title": "Are you comfortable working in shifts, including night shifts if required?",
+    "difficulty": "Easy",
+    "answer": "Answer honestly based on your real availability. If Wipro's role (especially in support/testing streams) requires shift flexibility, being upfront prevents mismatched expectations later."
+  },
+  {
+    "id": 12,
+    "section": "hr",
+    "title": "Why did you choose Computer Science as your field?",
+    "difficulty": "Easy",
+    "answer": "Share a genuine, specific reason \u2014 a project, a teacher, a personal problem you solved with code \u2014 rather than a generic 'I've always loved computers' answer, since specificity is more memorable and credible."
+  },
+  {
+    "id": 13,
+    "section": "technical",
+    "title": "What is the difference between a compiler warning and a compiler error?",
+    "difficulty": "Easy",
+    "answer": "A compiler error prevents the code from compiling at all \u2014 it must be fixed. A compiler warning flags code that compiles successfully but may be risky, unclear, or likely to cause bugs (like an unused variable), and can technically be ignored, though it shouldn't be."
+  },
+  {
+    "id": 14,
+    "section": "technical",
+    "title": "What is a hash table, and how does it handle collisions?",
+    "difficulty": "Medium",
+    "answer": "A hash table stores key-value pairs using a hash function to compute an index (bucket) for each key. Collisions, where two keys hash to the same bucket, are commonly handled through chaining (storing a linked list of entries per bucket) or open addressing (probing for the next free slot)."
+  },
+  {
+    "id": 15,
+    "section": "technical",
+    "title": "What is the difference between normalization and denormalization, and when would you denormalize?",
+    "difficulty": "Medium",
+    "answer": "Normalization reduces redundancy by splitting data into related tables. Denormalization intentionally reintroduces some redundancy by combining tables, trading storage and update complexity for faster read performance \u2014 commonly done in reporting/analytics systems where reads vastly outnumber writes."
+  },
+  {
+    "id": 16,
+    "section": "technical",
+    "title": "What is regression testing?",
+    "difficulty": "Easy",
+    "answer": "Regression testing re-runs existing test cases after code changes (bug fixes, new features) to confirm that previously working functionality hasn't broken, which is especially important in agile environments with frequent releases."
+  },
+  {
+    "id": 17,
+    "section": "technical",
+    "title": "What is the difference between a for loop and a while loop, and when would you prefer one over the other?",
+    "difficulty": "Easy",
+    "answer": "A for loop is best when the number of iterations is known in advance (e.g., iterating a fixed number of times or over an array). A while loop is best when the number of iterations depends on a condition that isn't known upfront, such as reading input until a sentinel value appears."
+  },
+  {
+    "id": 18,
+    "section": "technical",
+    "title": "What is exception propagation in Java?",
+    "difficulty": "Medium",
+    "answer": "Exception propagation is the process by which an exception, if not caught in the method where it occurs, moves up the call stack to the calling method, and continues doing so until it's either caught by a try-catch block or reaches the top of the stack and crashes the program."
+  },
+  {
+    "id": 19,
+    "section": "coding",
+    "title": "Write a program to find the union of two arrays without duplicate elements.",
+    "difficulty": "Medium",
+    "answer": "Add all elements from both arrays into a HashSet, which automatically discards duplicates, then convert the set back to a list or array if needed.",
+    "example": "Set<Integer> union(int[] a, int[] b){\n  Set<Integer> result = new HashSet<>();\n  for(int x: a) result.add(x);\n  for(int y: b) result.add(y);\n  return result;\n}"
+  },
+  {
+    "id": 20,
+    "section": "coding",
+    "title": "Write a program to check if a number is a perfect number.",
+    "difficulty": "Medium",
+    "answer": "A perfect number equals the sum of its proper divisors (excluding itself). Check divisibility up to n/2, summing all divisors, and compare the sum to the original number.",
+    "example": "boolean isPerfect(int n){\n  int sum = 0;\n  for(int i=1;i<=n/2;i++){\n    if(n % i == 0) sum += i;\n  }\n  return sum == n && n != 0;\n}"
+  },
+  {
+    "id": 21,
+    "section": "coding",
+    "title": "Write a program to find the longest substring without repeating characters.",
+    "difficulty": "Hard",
+    "answer": "Use a sliding window with two pointers and a HashSet: expand the window by moving the right pointer, and whenever a duplicate character is found, shrink the window from the left until the duplicate is removed, tracking the maximum window length seen.",
+    "example": "int lengthOfLongestSubstring(String s){\n  Set<Character> seen = new HashSet<>();\n  int left = 0, maxLen = 0;\n  for(int right = 0; right < s.length(); right++){\n    while(seen.contains(s.charAt(right))){\n      seen.remove(s.charAt(left));\n      left++;\n    }\n    seen.add(s.charAt(right));\n    maxLen = Math.max(maxLen, right - left + 1);\n  }\n  return maxLen;\n}"
+  },
+  {
+    "id": 22,
+    "section": "coding",
+    "title": "Write a program to implement a stack using an array.",
+    "difficulty": "Medium",
+    "answer": "Maintain an array and a 'top' index. Push increments the index and stores the value; pop reads the value at the current index and decrements it, checking for overflow/underflow at the array's bounds.",
+    "example": "class Stack {\n  int[] arr = new int[100];\n  int top = -1;\n  void push(int x){ if(top < arr.length-1) arr[++top] = x; }\n  int pop(){ return top >= 0 ? arr[top--] : -1; }\n}"
+  },
+  {
+    "id": 23,
+    "section": "coding",
+    "title": "Write a SQL query to find the department with the highest average salary.",
+    "difficulty": "Medium",
+    "answer": "Group employees by department, compute the average salary per group, sort descending, and take the top row.",
+    "example": "SELECT dept_id, AVG(salary) AS avg_salary\nFROM Employee\nGROUP BY dept_id\nORDER BY avg_salary DESC\nLIMIT 1;"
+  },
+  {
+    "id": 24,
+    "section": "coding",
+    "title": "Write a program to print Pascal's Triangle up to n rows.",
+    "difficulty": "Medium",
+    "answer": "Each row's values are binomial coefficients; each interior value equals the sum of the two values above it in the previous row, with every row starting and ending in 1.",
+    "example": "void printPascal(int n){\n  for(int i=0;i<n;i++){\n    int val=1;\n    for(int j=0;j<=i;j++){\n      System.out.print(val + \" \");\n      val = val * (i-j) / (j+1);\n    }\n    System.out.println();\n  }\n}"
+  },
+  {
+    "id": 25,
+    "section": "technical",
+    "title": "What is the difference between functional and non-functional requirements?",
+    "difficulty": "Easy",
+    "answer": "Functional requirements describe what a system should do \u2014 specific features and behaviors, like 'users can reset their password.' Non-functional requirements describe how the system should perform overall \u2014 qualities like performance, security, scalability, and usability."
+  },
+  {
+    "id": 26,
+    "section": "technical",
+    "title": "What is the difference between unit testing and system testing?",
+    "difficulty": "Easy",
+    "answer": "Unit testing verifies a single function or component in isolation, usually written by developers. System testing verifies the entire integrated application as a whole against the full set of requirements, usually performed by a QA team before release."
+  },
+  {
+    "id": 27,
+    "section": "technical",
+    "title": "What is a memory leak, and how can it occur even in a garbage-collected language like Java?",
+    "difficulty": "Medium",
+    "answer": "A memory leak happens when memory that's no longer needed isn't released. Even with garbage collection, this can occur if references to unused objects are unintentionally kept alive \u2014 for example, objects added to a static collection that's never cleared, preventing the garbage collector from reclaiming them."
+  },
+  {
+    "id": 28,
+    "section": "technical",
+    "title": "What is the difference between a class and an object?",
+    "difficulty": "Easy",
+    "answer": "A class is a blueprint that defines the properties and behaviors an object of that type will have. An object is a concrete instance of a class, created in memory with its own specific values for those properties."
+  },
+  {
+    "id": 29,
+    "section": "technical",
+    "title": "What is method chaining, and how is it implemented?",
+    "difficulty": "Medium",
+    "answer": "Method chaining lets you call multiple methods on the same object in a single statement by having each method return 'this' (the current object) instead of void, allowing calls to be linked together fluently.",
+    "example": "class Builder {\n  StringBuilder sb = new StringBuilder();\n  Builder add(String s){ sb.append(s); return this; }\n}\nnew Builder().add(\"Hello\").add(\" World\");"
+  },
+  {
+    "id": 30,
+    "section": "technical",
+    "title": "What is the difference between pessimistic and optimistic concurrency control?",
+    "difficulty": "Hard",
+    "answer": "Pessimistic concurrency control locks data before a transaction reads or writes it, blocking conflicting transactions until the lock is released. Optimistic concurrency control allows transactions to proceed without locking, checking for conflicts only at commit time (often via a version number), and rolling back if a conflict is found."
+  },
+  {
+    "id": 31,
+    "section": "technical",
+    "title": "What is connection pooling, and why is it used with databases?",
+    "difficulty": "Medium",
+    "answer": "Connection pooling maintains a reusable pool of open database connections instead of opening and closing a new one for every request, which is expensive. Requests borrow a connection from the pool and return it when done, significantly improving performance under load."
+  },
+  {
+    "id": 32,
+    "section": "technical",
+    "title": "What is the difference between a logical and a physical database schema?",
+    "difficulty": "Medium",
+    "answer": "A logical schema defines the structure of data conceptually \u2014 entities, attributes, and relationships \u2014 independent of how it's stored. A physical schema defines how that data is actually stored on disk, including file organization, indexing, and partitioning specific to a database engine."
+  },
+  {
+    "id": 33,
+    "section": "technical",
+    "title": "What is the difference between a data lake and a data warehouse?",
+    "difficulty": "Medium",
+    "answer": "A data lake stores raw data in its native format (structured, semi-structured, or unstructured) at large scale, with structure applied only when the data is read. A data warehouse stores processed, structured data organized specifically for fast, reliable analytical querying."
+  },
+  {
+    "id": 34,
+    "section": "technical",
+    "title": "What is load testing, and how does it differ from stress testing?",
+    "difficulty": "Medium",
+    "answer": "Load testing checks how a system performs under an expected, realistic level of concurrent usage. Stress testing pushes the system beyond normal capacity, deliberately overloading it to find its breaking point and observe how it fails and recovers."
+  },
+  {
+    "id": 35,
+    "section": "technical",
+    "title": "What is the difference between a bug, a defect, and an error?",
+    "difficulty": "Easy",
+    "answer": "An error is a mistake made by a developer in the code. A defect (or bug) is the flaw in the software that results from that error, discovered during testing or usage. In casual use, 'bug' and 'defect' are often used interchangeably."
+  },
+  {
+    "id": 36,
+    "section": "technical",
+    "title": "What is test-driven development (TDD)?",
+    "difficulty": "Medium",
+    "answer": "TDD is a development practice where you write a failing automated test for a small piece of functionality first, then write the minimum code needed to make it pass, then refactor \u2014 repeating this red-green-refactor cycle for each new piece of behavior."
+  },
+  {
+    "id": 37,
+    "section": "technical",
+    "title": "What is the difference between strong and weak references in memory management?",
+    "difficulty": "Hard",
+    "answer": "A strong reference keeps an object alive as long as the reference exists, preventing garbage collection. A weak reference doesn't prevent garbage collection \u2014 the object can be reclaimed even while a weak reference to it still exists, useful for caches where you don't want to prevent memory from being freed."
+  },
+  {
+    "id": 38,
+    "section": "technical",
+    "title": "What is the difference between a view and a materialized view in SQL?",
+    "difficulty": "Medium",
+    "answer": "A regular view is a saved query that runs live against the underlying tables every time it's accessed, always showing current data. A materialized view stores the query's result physically, offering faster reads but requiring periodic refreshes to stay up to date."
+  },
+  {
+    "id": 39,
+    "section": "technical",
+    "title": "What is the difference between synchronous and asynchronous APIs?",
+    "difficulty": "Easy",
+    "answer": "A synchronous API blocks the caller until it returns a response, so the caller waits before continuing. An asynchronous API returns immediately (often with a promise, callback, or acknowledgment) and delivers the actual result later, letting the caller continue other work in the meantime."
+  },
+  {
+    "id": 40,
+    "section": "coding",
+    "title": "Write a program to find the largest and smallest digit in a number.",
+    "difficulty": "Easy",
+    "answer": "Extract each digit using modulo 10 and integer division by 10, updating running max and min digit values as you go.",
+    "example": "void largestSmallestDigit(int n){\n  int largest = 0, smallest = 9;\n  n = Math.abs(n);\n  while(n > 0){\n    int digit = n % 10;\n    largest = Math.max(largest, digit);\n    smallest = Math.min(smallest, digit);\n    n /= 10;\n  }\n  System.out.println(\"Largest: \" + largest + \", Smallest: \" + smallest);\n}"
+  },
+  {
+    "id": 41,
+    "section": "coding",
+    "title": "Write a program to check if a number is a strong number (the sum of the factorials of its digits equals the number itself).",
+    "difficulty": "Medium",
+    "answer": "Compute the factorial of each digit and sum them; the number is 'strong' if this sum equals the original number (e.g., 145 = 1! + 4! + 5!).",
+    "example": "int factorial(int n){ return n <= 1 ? 1 : n * factorial(n-1); }\nboolean isStrongNumber(int n){\n  int original = n, sum = 0;\n  while(n > 0){\n    sum += factorial(n % 10);\n    n /= 10;\n  }\n  return sum == original;\n}"
+  },
+  {
+    "id": 42,
+    "section": "coding",
+    "title": "Write a program to find all pairs of elements in an array with a given difference.",
+    "difficulty": "Medium",
+    "answer": "Add every element to a HashSet first, then for each element check if (element + difference) also exists in the set, printing the pair if it does.",
+    "example": "void findPairsWithDiff(int[] arr, int diff){\n  Set<Integer> set = new HashSet<>();\n  for(int x : arr) set.add(x);\n  for(int x : arr){\n    if(set.contains(x + diff)) System.out.println(x + \", \" + (x + diff));\n  }\n}"
+  },
+  {
+    "id": 43,
+    "section": "coding",
+    "title": "Write a program to remove all whitespace characters from a string.",
+    "difficulty": "Easy",
+    "answer": "Use a regular expression to match all whitespace characters and replace them with an empty string.",
+    "example": "String removeWhitespace(String s){\n  return s.replaceAll(\"\\\\s+\", \"\");\n}"
+  },
+  {
+    "id": 44,
+    "section": "coding",
+    "title": "Write a program to implement heap sort.",
+    "difficulty": "Hard",
+    "answer": "First build a max-heap from the array, then repeatedly swap the root (largest element) with the last unsorted element and 'heapify' the reduced heap, shrinking the sorted boundary by one each time.",
+    "example": "void heapify(int[] arr, int n, int i){\n  int largest = i, l = 2*i+1, r = 2*i+2;\n  if(l < n && arr[l] > arr[largest]) largest = l;\n  if(r < n && arr[r] > arr[largest]) largest = r;\n  if(largest != i){\n    int t=arr[i]; arr[i]=arr[largest]; arr[largest]=t;\n    heapify(arr, n, largest);\n  }\n}\nvoid heapSort(int[] arr){\n  int n = arr.length;\n  for(int i = n/2-1; i >= 0; i--) heapify(arr, n, i);\n  for(int i = n-1; i > 0; i--){\n    int t=arr[0]; arr[0]=arr[i]; arr[i]=t;\n    heapify(arr, i, 0);\n  }\n}"
+  },
+  {
+    "id": 45,
+    "section": "coding",
+    "title": "Write a program to find the number of distinct ways to climb n stairs, taking 1 or 2 steps at a time.",
+    "difficulty": "Hard",
+    "answer": "This follows the Fibonacci pattern: the number of ways to reach step n equals the ways to reach step n-1 plus the ways to reach step n-2, since the last move is either a 1-step or a 2-step.",
+    "example": "int climbStairs(int n){\n  if(n <= 2) return n;\n  int a = 1, b = 2;\n  for(int i = 3; i <= n; i++){\n    int c = a + b;\n    a = b; b = c;\n  }\n  return b;\n}"
+  },
+  {
+    "id": 46,
+    "section": "coding",
+    "title": "Write a program to check if a binary tree is height-balanced.",
+    "difficulty": "Hard",
+    "answer": "Recursively compute the height of each subtree while checking that the height difference between left and right subtrees never exceeds 1 at any node; return -1 as a sentinel to short-circuit as soon as imbalance is found.",
+    "example": "int checkHeight(Node node){\n  if(node == null) return 0;\n  int left = checkHeight(node.left);\n  if(left == -1) return -1;\n  int right = checkHeight(node.right);\n  if(right == -1) return -1;\n  if(Math.abs(left - right) > 1) return -1;\n  return Math.max(left, right) + 1;\n}\nboolean isBalanced(Node root){ return checkHeight(root) != -1; }"
+  },
+  {
+    "id": 47,
+    "section": "coding",
+    "title": "Write a program to count the total number of vowels in a paragraph.",
+    "difficulty": "Easy",
+    "answer": "Iterate through every character in the paragraph and increment a counter whenever the lowercase version of the character matches a vowel.",
+    "example": "int countVowels(String text){\n  int count = 0;\n  String vowels = \"aeiou\";\n  for(char c : text.toLowerCase().toCharArray()){\n    if(vowels.indexOf(c) != -1) count++;\n  }\n  return count;\n}"
+  },
+  {
+    "id": 48,
+    "section": "coding",
+    "title": "Write a program to implement a queue using a singly linked list.",
+    "difficulty": "Medium",
+    "answer": "Maintain head and tail pointers; enqueue adds a new node at the tail, and dequeue removes and returns the node at the head, giving O(1) time for both operations.",
+    "example": "class LinkedQueue {\n  Node head, tail;\n  void enqueue(int x){\n    Node node = new Node(x);\n    if(tail == null){ head = tail = node; }\n    else { tail.next = node; tail = node; }\n  }\n  int dequeue(){\n    int val = head.val;\n    head = head.next;\n    if(head == null) tail = null;\n    return val;\n  }\n}"
+  },
+  {
+    "id": 49,
+    "section": "coding",
+    "title": "Write a program to find the longest common subsequence between two strings.",
+    "difficulty": "Hard",
+    "answer": "Use dynamic programming: build a 2D table where dp[i][j] represents the LCS length of the first i characters of one string and first j of the other, extending the subsequence by 1 when characters match, or taking the best of skipping a character from either string otherwise.",
+    "example": "int lcs(String a, String b){\n  int[][] dp = new int[a.length()+1][b.length()+1];\n  for(int i=1;i<=a.length();i++){\n    for(int j=1;j<=b.length();j++){\n      if(a.charAt(i-1) == b.charAt(j-1)) dp[i][j] = dp[i-1][j-1] + 1;\n      else dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);\n    }\n  }\n  return dp[a.length()][b.length()];\n}"
+  },
+  {
+    "id": 50,
+    "section": "coding",
+    "title": "Write a SQL query to find the nth row from a table without using LIMIT/OFFSET.",
+    "difficulty": "Hard",
+    "answer": "Use a correlated subquery that counts how many distinct values are less than (or rows ranked before) the current row to identify the nth row directly.",
+    "example": "SELECT *\nFROM Employee e1\nWHERE (N-1) = (\n  SELECT COUNT(*) FROM Employee e2 WHERE e2.id < e1.id\n);"
+  },
+  {
+    "id": 51,
+    "section": "coding",
+    "title": "Write a program to check if a string starts and ends with the same character.",
+    "difficulty": "Easy",
+    "answer": "Compare the character at index 0 with the character at the last index of the string.",
+    "example": "boolean startsEndsSame(String s){\n  if(s.isEmpty()) return false;\n  return s.charAt(0) == s.charAt(s.length()-1);\n}"
+  },
+  {
+    "id": 52,
+    "section": "coding",
+    "title": "Write a program to count the number of inversions in an array (pairs where a larger element appears before a smaller one).",
+    "difficulty": "Hard",
+    "answer": "Use a modified merge sort: whenever merging two sorted halves, if an element from the right half is placed before remaining elements of the left half, all of those remaining left-half elements form inversions with it \u2014 count them during the merge step.",
+    "example": "// During merge step, when arr[j] (right half) < arr[i] (left half):\n// inversions += (mid - i + 1), since all remaining left elements are greater"
+  },
+  {
+    "id": 53,
+    "section": "coding",
+    "title": "Write a program to implement level-order traversal of a binary tree.",
+    "difficulty": "Medium",
+    "answer": "Use a queue: start by adding the root, then repeatedly dequeue a node, process it, and enqueue its children, visiting the tree level by level from top to bottom.",
+    "example": "void levelOrder(Node root){\n  Queue<Node> queue = new LinkedList<>();\n  if(root != null) queue.add(root);\n  while(!queue.isEmpty()){\n    Node node = queue.poll();\n    System.out.print(node.val + \" \");\n    if(node.left != null) queue.add(node.left);\n    if(node.right != null) queue.add(node.right);\n  }\n}"
+  },
+  {
+    "id": 54,
+    "section": "coding",
+    "title": "Write a program to find the minimum number of coins needed to make a given amount (the coin change problem).",
+    "difficulty": "Hard",
+    "answer": "Use dynamic programming: dp[amount] represents the minimum coins needed for that amount, computed by trying each coin denomination and taking 1 plus the best result for the remaining amount.",
+    "example": "int coinChange(int[] coins, int amount){\n  int[] dp = new int[amount+1];\n  Arrays.fill(dp, amount+1);\n  dp[0] = 0;\n  for(int i = 1; i <= amount; i++){\n    for(int coin : coins){\n      if(coin <= i) dp[i] = Math.min(dp[i], dp[i-coin] + 1);\n    }\n  }\n  return dp[amount] > amount ? -1 : dp[amount];\n}"
+  },
+  {
+    "id": 55,
+    "section": "coding",
+    "title": "Write a SQL query to find all employees hired in the current year.",
+    "difficulty": "Easy",
+    "answer": "Compare the year portion of the hire date column to the current year using a date function.",
+    "example": "SELECT name, hire_date\nFROM Employee\nWHERE EXTRACT(YEAR FROM hire_date) = EXTRACT(YEAR FROM CURRENT_DATE);"
+  },
+  {
+    "id": 56,
+    "section": "technical",
+    "title": "What is the practical difference between a compiled language and an interpreted language at execution time?",
+    "difficulty": "Easy",
+    "answer": "A compiled language is translated fully into machine code before execution, producing a standalone binary that runs directly on hardware. An interpreted language is translated and executed line by line at runtime, making development faster to iterate but generally slower to execute."
+  },
+  {
+    "id": 57,
+    "section": "technical",
+    "title": "What is garbage collection and what problem does it solve?",
+    "difficulty": "Easy",
+    "answer": "Garbage collection automatically frees memory occupied by objects no longer referenced by the running program, solving the memory-leak problem that would otherwise occur if developers had to manually track and free every allocation, as in languages like C."
+  },
+  {
+    "id": 58,
+    "section": "technical",
+    "title": "Why is grouping data and methods in a class not enough for true encapsulation?",
+    "difficulty": "Medium",
+    "answer": "True encapsulation requires deliberately using access modifiers such as private, protected, and public to hide internal state, exposing only a controlled public interface like getters and setters, so external code can't directly corrupt an object's internal data."
+  },
+  {
+    "id": 59,
+    "section": "technical",
+    "title": "What is the difference between a function and a method?",
+    "difficulty": "Easy",
+    "answer": "A function is a standalone, reusable block of code that can be called independently. A method is a function that belongs to a class or object and typically operates on that object's data, accessed via the object itself."
+  },
+  {
+    "id": 60,
+    "section": "technical",
+    "title": "What is idempotency in the context of REST APIs?",
+    "difficulty": "Medium",
+    "answer": "An idempotent operation produces the same result no matter how many times it's performed. GET, PUT, and DELETE are expected to be idempotent, whereas POST typically is not, since it usually creates a new resource on each call."
+  },
+  {
+    "id": 61,
+    "section": "technical",
+    "title": "What is the difference between a 4xx and a 5xx HTTP status code?",
+    "difficulty": "Easy",
+    "answer": "4xx status codes indicate a client-side error, such as 404 Not Found or 400 Bad Request, meaning the request itself was invalid. 5xx status codes indicate a server-side error, such as 500 Internal Server Error, meaning the request was valid but the server failed to fulfill it."
+  },
+  {
+    "id": 62,
+    "section": "technical",
+    "title": "What is the difference between abstraction and encapsulation?",
+    "difficulty": "Medium",
+    "answer": "Abstraction hides complexity by exposing only relevant, high-level behavior \u2014 what an object does \u2014 often via interfaces or abstract classes. Encapsulation hides internal state by restricting direct access to an object's data \u2014 how it does it \u2014 typically via access modifiers."
+  },
+  {
+    "id": 63,
+    "section": "technical",
+    "title": "What is the difference between a race condition and a deadlock?",
+    "difficulty": "Hard",
+    "answer": "A race condition happens when the outcome depends on the unpredictable timing of concurrent operations on shared data, producing inconsistent results. A deadlock happens when two or more processes each wait indefinitely for a resource the other holds, so neither can proceed at all."
+  },
+  {
+    "id": 64,
+    "section": "technical",
+    "title": "When would you choose an interface over an abstract class?",
+    "difficulty": "Medium",
+    "answer": "Choose an interface when unrelated classes need to guarantee the same set of capabilities, such as Comparable or Serializable. Choose an abstract class when related classes share common state or partial implementation that shouldn't be duplicated, and a strict single-inheritance relationship makes sense."
+  },
+  {
+    "id": 65,
+    "section": "technical",
+    "title": "What is the difference between a Process and a Program?",
+    "difficulty": "Easy",
+    "answer": "A program is a passive set of instructions stored on disk, while a process is an active instance of a program in execution, with its own memory, state, and resources allocated by the OS."
+  },
+  {
+    "id": 66,
+    "section": "technical",
+    "title": "What is Round Robin scheduling in operating systems?",
+    "difficulty": "Medium",
+    "answer": "Round Robin is a preemptive CPU scheduling algorithm that gives each process a fixed time slice (quantum) in cyclic order, preventing any single process from monopolizing the CPU and ensuring fair response time for all processes."
+  },
+  {
+    "id": 67,
+    "section": "technical",
+    "title": "What is virtual memory?",
+    "difficulty": "Medium",
+    "answer": "Virtual memory lets a process use more memory than is physically available by mapping logical addresses to physical RAM or disk (swap space) via the OS, giving each process the illusion of a large, contiguous address space."
+  },
+  {
+    "id": 68,
+    "section": "technical",
+    "title": "What is thrashing in operating systems?",
+    "difficulty": "Hard",
+    "answer": "Thrashing occurs when a system spends more time swapping pages in and out of memory than executing actual instructions, usually because too many processes are competing for too little RAM, causing severe performance degradation."
+  },
+  {
+    "id": 69,
+    "section": "coding",
+    "title": "Write a SQL query to calculate a running total of sales by date.",
+    "difficulty": "Hard",
+    "answer": "Use a window function with SUM() OVER an ORDER BY clause, which accumulates the total across all preceding rows in date order without needing a self-join.",
+    "example": "SELECT sale_date, amount,\n  SUM(amount) OVER (ORDER BY sale_date) AS running_total\nFROM Sales\nORDER BY sale_date;"
+  },
+  {
+    "id": 70,
+    "section": "coding",
+    "title": "Write a SQL query to find the top 3 highest-paid employees in each department.",
+    "difficulty": "Hard",
+    "answer": "Use DENSE_RANK() partitioned by department and ordered by salary descending inside a subquery, then filter the outer query for rank less than or equal to 3.",
+    "example": "SELECT name, dept_id, salary FROM (\n  SELECT name, dept_id, salary,\n    DENSE_RANK() OVER (PARTITION BY dept_id ORDER BY salary DESC) AS rnk\n  FROM Employee\n) ranked\nWHERE rnk <= 3;"
+  },
+  {
+    "id": 71,
+    "section": "coding",
+    "title": "Write a program to check if a number is a palindrome without converting it to a string.",
+    "difficulty": "Medium",
+    "answer": "Reverse the number mathematically using modulo and division, then compare the reversed number to the original.",
+    "example": "boolean isPalindromeNumber(int n){\n  int original = n, reversed = 0;\n  while(n > 0){\n    reversed = reversed*10 + n%10;\n    n /= 10;\n  }\n  return original == reversed;\n}"
+  },
+  {
+    "id": 72,
+    "section": "coding",
+    "title": "Write a program to find the most frequently occurring element in an array.",
+    "difficulty": "Medium",
+    "answer": "Use a HashMap to count occurrences of each element while scanning the array once, then scan the map to find the key with the highest count.",
+    "example": "int mostFrequent(int[] arr){\n  Map<Integer,Integer> freq = new HashMap<>();\n  for(int x : arr) freq.put(x, freq.getOrDefault(x,0)+1);\n  int maxCount=0, result=arr[0];\n  for(Map.Entry<Integer,Integer> e : freq.entrySet()){\n    if(e.getValue() > maxCount){ maxCount = e.getValue(); result = e.getKey(); }\n  }\n  return result;\n}"
+  },
+  {
+    "id": 73,
+    "section": "coding",
+    "title": "Write a program to insert a node at a given position in a singly linked list.",
+    "difficulty": "Medium",
+    "answer": "Walk the list to the node just before the target position, then redirect its 'next' pointer to the new node, and set the new node's 'next' to what used to follow.",
+    "example": "void insertAt(Node head, int position, int data){\n  Node newNode = new Node(data);\n  if(position == 0){ newNode.next = head; return; }\n  Node current = head;\n  for(int i=0;i<position-1 && current!=null;i++) current = current.next;\n  newNode.next = current.next;\n  current.next = newNode;\n}"
+  },
+  {
+    "id": 74,
+    "section": "coding",
+    "title": "Write a program to reverse the order of words in a sentence (not the characters).",
+    "difficulty": "Medium",
+    "answer": "Split the sentence into words on whitespace, then rebuild the sentence by joining the words back together in reverse order.",
+    "example": "String reverseWords(String sentence){\n  String[] words = sentence.trim().split(\"\\\\s+\");\n  StringBuilder result = new StringBuilder();\n  for(int i=words.length-1;i>=0;i--){\n    result.append(words[i]);\n    if(i>0) result.append(\" \");\n  }\n  return result.toString();\n}"
+  },
+  {
+    "id": 75,
+    "section": "coding",
+    "title": "Write a program to check if a 9x9 Sudoku row and column have no duplicate digits (simplified validation).",
+    "difficulty": "Hard",
+    "answer": "For each row and each column, use a HashSet to track digits already seen (ignoring empty cells); if a digit is encountered that's already in the set for its row or column, the board is invalid.",
+    "example": "boolean isValidRow(int[] row){\n  Set<Integer> seen = new HashSet<>();\n  for(int val : row){\n    if(val != 0 && !seen.add(val)) return false;\n  }\n  return true;\n}"
+  },
+  {
+    "id": 76,
+    "section": "coding",
+    "title": "Write a program to find all pairs of numbers in an array with a given absolute difference k.",
+    "difficulty": "Medium",
+    "answer": "Add all elements to a HashSet, then for each element x, check whether x + k also exists in the set, recording the pair if so.",
+    "example": "void findPairsWithDiff(int[] arr, int k){\n  Set<Integer> set = new HashSet<>();\n  for(int x : arr) set.add(x);\n  for(int x : arr){\n    if(set.contains(x + k)) System.out.println(x + \", \" + (x+k));\n  }\n}"
+  },
+  {
+    "id": 77,
+    "section": "coding",
+    "title": "Write a program to implement binary exponentiation (fast power calculation).",
+    "difficulty": "Hard",
+    "answer": "Instead of multiplying the base n times, repeatedly square the base and halve the exponent, multiplying the result in only when the current bit of the exponent is 1 \u2014 reducing the time complexity from O(n) to O(log n).",
+    "example": "long power(long base, long exp){\n  long result = 1;\n  while(exp > 0){\n    if((exp & 1) == 1) result *= base;\n    base *= base;\n    exp >>= 1;\n  }\n  return result;\n}"
+  },
+  {
+    "id": 78,
+    "section": "coding",
+    "title": "Write a program to find the largest element in an array without using a library function.",
+    "difficulty": "Easy",
+    "answer": "Initialize a variable with the first element, then iterate through the array, updating it whenever a larger value is found.",
+    "example": "int findMax(int[] arr){\n  int max = arr[0];\n  for(int i=1;i<arr.length;i++){\n    if(arr[i] > max) max = arr[i];\n  }\n  return max;\n}"
+  },
+  {
+    "id": 79,
+    "section": "coding",
+    "title": "Write a program to find the smallest and largest elements in a single pass.",
+    "difficulty": "Easy",
+    "answer": "Track both a min and max variable simultaneously while iterating once through the array, updating either as needed for each element.",
+    "example": "void findMinMax(int[] arr){\n  int min = arr[0], max = arr[0];\n  for(int x : arr){\n    if(x < min) min = x;\n    if(x > max) max = x;\n  }\n  System.out.println(\"Min: \"+min+\", Max: \"+max);\n}"
+  },
+  {
+    "id": 80,
+    "section": "coding",
+    "title": "Write a program to check if a number is a power of two.",
+    "difficulty": "Medium",
+    "answer": "A power of two has exactly one bit set in its binary representation, so n & (n-1) equals zero only for powers of two (and n must be positive).",
+    "example": "boolean isPowerOfTwo(int n){\n  return n > 0 && (n & (n - 1)) == 0;\n}"
+  }
+]

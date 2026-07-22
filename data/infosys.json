@@ -1,0 +1,606 @@
+[
+  {
+    "id": 1,
+    "section": "online-test",
+    "title": "What is a pseudocode question in the Infosys test, and how should I approach it?",
+    "difficulty": "Easy",
+    "answer": "Infosys pseudocode questions give you language-agnostic code with a logic gap and ask you to identify the correct output or missing line. Approach them by manually tracing variable values line by line rather than trying to guess the pattern.",
+    "example": "For a loop like 'for i in range(1,5): sum += i', trace i=1,2,3,4 and add each to sum manually to get the final output."
+  },
+  {
+    "id": 2,
+    "section": "online-test",
+    "title": "How is the Infosys online test structured?",
+    "difficulty": "Easy",
+    "answer": "It typically includes Quantitative Aptitude, Logical Reasoning, Verbal Ability, and a Pseudocode/Programming Fundamentals section, with the coding round appearing in later stages for Specialist Engineer roles."
+  },
+  {
+    "id": 3,
+    "section": "technical",
+    "title": "What is the difference between an abstract class and an interface?",
+    "difficulty": "Medium",
+    "answer": "An abstract class can have both implemented and unimplemented methods and maintains state via instance variables, while an interface (traditionally) only declares method signatures with no state. A class can implement multiple interfaces but extend only one abstract class.",
+    "example": "interface Drawable { void draw(); }\nabstract class Shape { abstract void area(); void print(){ System.out.println(\"Shape\"); } }"
+  },
+  {
+    "id": 4,
+    "section": "technical",
+    "title": "Explain the concept of indexing in databases.",
+    "difficulty": "Medium",
+    "answer": "An index is a data structure (often a B-tree) that speeds up data retrieval by creating a sorted reference to table rows, at the cost of extra storage and slightly slower writes since indexes must be updated too.",
+    "tips": "Mention that over-indexing can hurt insert/update performance \u2014 it's a trade-off, not a free win."
+  },
+  {
+    "id": 5,
+    "section": "technical",
+    "title": "What are the differences between Stack and Queue data structures?",
+    "difficulty": "Easy",
+    "answer": "A Stack follows LIFO (Last In First Out) \u2014 the most recently added element is removed first, useful for undo operations and recursion. A Queue follows FIFO (First In First Out) \u2014 the earliest added element is removed first, useful for task scheduling and buffering."
+  },
+  {
+    "id": 6,
+    "section": "technical",
+    "title": "What is exception handling and why is it important?",
+    "difficulty": "Easy",
+    "answer": "Exception handling lets a program gracefully respond to runtime errors (like divide-by-zero or file-not-found) using try-catch blocks instead of crashing, improving robustness and user experience.",
+    "example": "try {\n  int result = 10/0;\n} catch (ArithmeticException e) {\n  System.out.println(\"Cannot divide by zero\");\n}"
+  },
+  {
+    "id": 7,
+    "section": "technical",
+    "title": "What is the SDLC and name its phases.",
+    "difficulty": "Easy",
+    "answer": "The Software Development Life Cycle is a structured process for building software. Its typical phases are Requirement Analysis, Design, Implementation (Coding), Testing, Deployment, and Maintenance."
+  },
+  {
+    "id": 8,
+    "section": "coding",
+    "title": "Write a program to check if a number is prime.",
+    "difficulty": "Easy",
+    "answer": "Check divisibility only up to the square root of the number for efficiency.",
+    "example": "boolean isPrime(int n){\n  if(n<2) return false;\n  for(int i=2;i*i<=n;i++){\n    if(n%i==0) return false;\n  }\n  return true;\n}"
+  },
+  {
+    "id": 9,
+    "section": "coding",
+    "title": "Write a program to reverse a linked list.",
+    "difficulty": "Medium",
+    "answer": "Iterate through the list, reversing the 'next' pointer of each node using three pointers: previous, current, and next.",
+    "example": "Node reverse(Node head){\n  Node prev=null, curr=head;\n  while(curr!=null){\n    Node next=curr.next;\n    curr.next=prev;\n    prev=curr;\n    curr=next;\n  }\n  return prev;\n}"
+  },
+  {
+    "id": 10,
+    "section": "coding",
+    "title": "Given an array, find the pair of elements whose sum equals a target value.",
+    "difficulty": "Medium",
+    "answer": "Use a HashSet to track visited numbers; for each element, check if (target - element) already exists in the set, giving an O(n) solution instead of the brute-force O(n\u00b2).",
+    "example": "for x in arr:\n    need = target - x\n    if need in seen:\n        return (need, x)\n    seen.add(x)"
+  },
+  {
+    "id": 11,
+    "section": "hr",
+    "title": "Why should we hire you over other candidates?",
+    "difficulty": "Medium",
+    "answer": "Pick two or three specific strengths backed by evidence (a project, an internship, a certification) rather than generic adjectives, and tie them directly to what the role needs.",
+    "example": "\"I built and deployed a full-stack attendance tracker during my final year project, so I already understand the debugging and deployment challenges a Specialist Engineer role will involve.\""
+  },
+  {
+    "id": 12,
+    "section": "hr",
+    "title": "What is your understanding of the Systems Engineer role at Infosys?",
+    "difficulty": "Medium",
+    "answer": "Research this before the interview: Systems Engineers typically work on application development, maintenance, and testing across client projects after structured foundational training at Infosys's Mysuru campus."
+  },
+  {
+    "id": 13,
+    "section": "technical",
+    "title": "What is DNS, and how does it work?",
+    "difficulty": "Easy",
+    "answer": "DNS (Domain Name System) translates human-readable domain names into IP addresses. When you type a URL, your device queries a DNS resolver, which checks cached records or asks authoritative name servers up the hierarchy (root \u2192 TLD \u2192 domain) until it finds the matching IP address."
+  },
+  {
+    "id": 14,
+    "section": "technical",
+    "title": "What is paging in operating systems?",
+    "difficulty": "Medium",
+    "answer": "Paging is a memory management technique that divides both physical memory and processes into fixed-size blocks called pages and frames, allowing a process's memory to be non-contiguous in RAM. This avoids external fragmentation and lets the OS load only needed pages, supporting virtual memory."
+  },
+  {
+    "id": 15,
+    "section": "technical",
+    "title": "What is the 'static' keyword used for in Java?",
+    "difficulty": "Easy",
+    "answer": "'static' marks a member as belonging to the class itself rather than to any instance. Static variables are shared across all objects, static methods can be called without creating an object, and static blocks run once when the class is loaded.",
+    "example": "class Counter {\n  static int count = 0;\n  Counter(){ count++; }\n}"
+  },
+  {
+    "id": 16,
+    "section": "technical",
+    "title": "What are transaction isolation levels in a database?",
+    "difficulty": "Hard",
+    "answer": "Isolation levels control how much one transaction can see of another's uncommitted changes, trading consistency for performance: Read Uncommitted (lowest, allows dirty reads), Read Committed, Repeatable Read, and Serializable (highest, fully isolated but slowest)."
+  },
+  {
+    "id": 17,
+    "section": "technical",
+    "title": "What is SQL injection, and how can it be prevented?",
+    "difficulty": "Medium",
+    "answer": "SQL injection is an attack where malicious SQL is inserted into an input field and executed by the database, often to bypass authentication or extract data. It's prevented by using parameterized queries/prepared statements instead of string-concatenated SQL, and by validating and sanitizing all user input."
+  },
+  {
+    "id": 18,
+    "section": "technical",
+    "title": "What is the difference between vertical and horizontal scaling?",
+    "difficulty": "Medium",
+    "answer": "Vertical scaling means adding more resources (CPU, RAM) to a single existing server. Horizontal scaling means adding more servers/machines to distribute load. Horizontal scaling generally offers better fault tolerance and near-limitless growth, but adds architectural complexity like load balancing and data synchronization."
+  },
+  {
+    "id": 19,
+    "section": "coding",
+    "title": "Write a program to find the missing number in an array containing 1 to n.",
+    "difficulty": "Medium",
+    "answer": "Compute the expected sum of 1 to n using the formula n(n+1)/2, then subtract the actual sum of the array \u2014 the difference is the missing number.",
+    "example": "int findMissing(int[] arr, int n){\n  int expectedSum = n*(n+1)/2;\n  int actualSum = 0;\n  for(int x: arr) actualSum += x;\n  return expectedSum - actualSum;\n}"
+  },
+  {
+    "id": 20,
+    "section": "coding",
+    "title": "Write a program to check if one string is a rotation of another.",
+    "difficulty": "Medium",
+    "answer": "If string B is a rotation of string A, then B must be a substring of A concatenated with itself (A+A), provided both strings are the same length.",
+    "example": "boolean isRotation(String a, String b){\n  return a.length() == b.length() && (a + a).contains(b);\n}"
+  },
+  {
+    "id": 21,
+    "section": "coding",
+    "title": "Write a program to find the intersection of two arrays.",
+    "difficulty": "Medium",
+    "answer": "Add all elements of the first array to a HashSet, then iterate through the second array and collect elements that already exist in that set.",
+    "example": "Set<Integer> intersection(int[] a, int[] b){\n  Set<Integer> setA = new HashSet<>();\n  for(int x: a) setA.add(x);\n  Set<Integer> result = new HashSet<>();\n  for(int y: b) if(setA.contains(y)) result.add(y);\n  return result;\n}"
+  },
+  {
+    "id": 22,
+    "section": "coding",
+    "title": "Write a program to implement selection sort.",
+    "difficulty": "Easy",
+    "answer": "Repeatedly find the minimum element from the unsorted portion of the array and swap it with the first unsorted position.",
+    "example": "void selectionSort(int[] arr){\n  for(int i=0;i<arr.length-1;i++){\n    int minIdx=i;\n    for(int j=i+1;j<arr.length;j++)\n      if(arr[j]<arr[minIdx]) minIdx=j;\n    int temp=arr[minIdx]; arr[minIdx]=arr[i]; arr[i]=temp;\n  }\n}"
+  },
+  {
+    "id": 23,
+    "section": "coding",
+    "title": "Write a program to count the number of set bits (1s) in a binary number.",
+    "difficulty": "Medium",
+    "answer": "Repeatedly check the last bit using a bitwise AND with 1, then right-shift the number, counting how many times the last bit was 1.",
+    "example": "int countSetBits(int n){\n  int count=0;\n  while(n>0){\n    count += (n & 1);\n    n >>= 1;\n  }\n  return count;\n}"
+  },
+  {
+    "id": 24,
+    "section": "coding",
+    "title": "Write a SQL query to find employees who joined in the last 30 days.",
+    "difficulty": "Medium",
+    "answer": "Filter the joining date column against the current date minus 30 days using a date-interval function.",
+    "example": "SELECT name, join_date\nFROM Employee\nWHERE join_date >= CURRENT_DATE - INTERVAL '30 days';"
+  },
+  {
+    "id": 25,
+    "section": "technical",
+    "title": "What is encapsulation, and why is it important?",
+    "difficulty": "Easy",
+    "answer": "Encapsulation bundles data and the methods that operate on it into a single unit (a class), hiding internal state behind a public interface. This protects data integrity by preventing external code from putting an object into an invalid state directly."
+  },
+  {
+    "id": 26,
+    "section": "technical",
+    "title": "What is the difference between a process and a thread in terms of memory?",
+    "difficulty": "Medium",
+    "answer": "A process has its own separate memory space (heap, stack, code segment) isolated from other processes. Threads within the same process share that process's heap and code segment but each maintains its own stack for local variables and call frames."
+  },
+  {
+    "id": 27,
+    "section": "technical",
+    "title": "What is a B-Tree, and why is it commonly used for database indexing?",
+    "difficulty": "Medium",
+    "answer": "A B-Tree is a self-balancing tree structure that keeps data sorted and allows searches, insertions, and deletions in logarithmic time. Databases use it for indexes because it minimizes disk reads by keeping the tree shallow and wide, matching how data is read in blocks from disk."
+  },
+  {
+    "id": 28,
+    "section": "technical",
+    "title": "What is the difference between a shallow copy and a deep copy of an object?",
+    "difficulty": "Medium",
+    "answer": "A shallow copy duplicates the top-level object but keeps references to the same nested objects, so changes to nested data affect both copies. A deep copy recursively duplicates every nested object too, producing a fully independent clone."
+  },
+  {
+    "id": 29,
+    "section": "technical",
+    "title": "What is the CAP theorem in distributed systems?",
+    "difficulty": "Hard",
+    "answer": "The CAP theorem states that a distributed data store can only guarantee two of three properties at once: Consistency (every read gets the latest write), Availability (every request gets a response), and Partition tolerance (the system keeps working despite network splits). Since network partitions are unavoidable in practice, real systems choose between prioritizing consistency or availability during a partition."
+  },
+  {
+    "id": 30,
+    "section": "technical",
+    "title": "What is dependency injection?",
+    "difficulty": "Medium",
+    "answer": "Dependency injection is a design technique where an object's dependencies are provided to it from outside (often by a framework) rather than the object creating them itself, making code more modular, testable, and loosely coupled."
+  },
+  {
+    "id": 31,
+    "section": "technical",
+    "title": "What is the difference between compile-time and runtime polymorphism?",
+    "difficulty": "Easy",
+    "answer": "Compile-time polymorphism (method overloading) is resolved by the compiler based on method signatures before the program runs. Runtime polymorphism (method overriding) is resolved dynamically based on the actual object type at the moment the method is called."
+  },
+  {
+    "id": 32,
+    "section": "technical",
+    "title": "What is a race condition?",
+    "difficulty": "Medium",
+    "answer": "A race condition occurs when the correctness of a program depends on the relative timing of two or more threads accessing shared data, and unsynchronized concurrent access produces inconsistent or unexpected results."
+  },
+  {
+    "id": 33,
+    "section": "technical",
+    "title": "What is the difference between the GET and POST HTTP methods?",
+    "difficulty": "Easy",
+    "answer": "GET requests retrieve data and pass parameters via the URL, making them visible, cacheable, and size-limited. POST requests send data in the request body, aren't cached by default, and are used for actions that change server state, like form submissions."
+  },
+  {
+    "id": 34,
+    "section": "technical",
+    "title": "What is caching, and why does it improve performance?",
+    "difficulty": "Medium",
+    "answer": "Caching stores the results of expensive operations (database queries, computations, API calls) in a fast-access layer so repeated requests for the same data can be served instantly instead of being recomputed, trading some memory for significant speed gains."
+  },
+  {
+    "id": 35,
+    "section": "technical",
+    "title": "What is the difference between a linker and a loader?",
+    "difficulty": "Medium",
+    "answer": "A linker combines multiple compiled object files and resolves references between them into a single executable. A loader then takes that executable and loads it into memory, setting up its address space so the operating system can begin executing it."
+  },
+  {
+    "id": 36,
+    "section": "technical",
+    "title": "What is the difference between a primary key and a unique key?",
+    "difficulty": "Easy",
+    "answer": "A primary key uniquely identifies each row, cannot contain NULLs, and a table can have only one. A unique key also enforces uniqueness but can allow a single NULL value (depending on the database) and a table can have multiple unique keys."
+  },
+  {
+    "id": 37,
+    "section": "technical",
+    "title": "What is API rate limiting?",
+    "difficulty": "Medium",
+    "answer": "Rate limiting restricts how many requests a client can make to an API within a given time window, protecting the server from overload or abuse and ensuring fair usage across all clients."
+  },
+  {
+    "id": 38,
+    "section": "technical",
+    "title": "What is eventual consistency in distributed databases?",
+    "difficulty": "Hard",
+    "answer": "Eventual consistency means that after a write, all replicas of the data will converge to the same value given enough time without new writes, but reads immediately after a write may temporarily return stale data \u2014 a trade-off many distributed systems accept for higher availability."
+  },
+  {
+    "id": 39,
+    "section": "coding",
+    "title": "Write a program to find the sum of all elements in an array.",
+    "difficulty": "Easy",
+    "answer": "Iterate through the array, adding each element to a running total.",
+    "example": "int sumArray(int[] arr){\n  int sum = 0;\n  for(int x : arr) sum += x;\n  return sum;\n}"
+  },
+  {
+    "id": 40,
+    "section": "coding",
+    "title": "Write a program to rotate a matrix by 90 degrees clockwise.",
+    "difficulty": "Medium",
+    "answer": "First transpose the matrix (swap rows and columns), then reverse each row to complete the 90-degree clockwise rotation.",
+    "example": "void rotate(int[][] m){\n  int n = m.length;\n  for(int i = 0; i < n; i++)\n    for(int j = i; j < n; j++){\n      int t = m[i][j]; m[i][j] = m[j][i]; m[j][i] = t;\n    }\n  for(int[] row : m){\n    for(int l = 0, r = row.length-1; l < r; l++, r--){\n      int t = row[l]; row[l] = row[r]; row[r] = t;\n    }\n  }\n}"
+  },
+  {
+    "id": 41,
+    "section": "coding",
+    "title": "Write a program to find all triplets in an array that sum to zero.",
+    "difficulty": "Hard",
+    "answer": "Sort the array, then for each element use two pointers on the remaining subarray to find pairs that sum to the negative of that element, skipping duplicates to avoid repeated triplets.",
+    "example": "void threeSum(int[] arr){\n  Arrays.sort(arr);\n  for(int i = 0; i < arr.length-2; i++){\n    if(i > 0 && arr[i]==arr[i-1]) continue;\n    int l = i+1, r = arr.length-1;\n    while(l < r){\n      int sum = arr[i]+arr[l]+arr[r];\n      if(sum == 0){ System.out.println(arr[i]+\",\"+arr[l]+\",\"+arr[r]); l++; r--; }\n      else if(sum < 0) l++;\n      else r--;\n    }\n  }\n}"
+  },
+  {
+    "id": 42,
+    "section": "coding",
+    "title": "Write a program to check if a string is a valid palindrome, ignoring non-alphanumeric characters and case.",
+    "difficulty": "Medium",
+    "answer": "Use two pointers from both ends, skipping non-alphanumeric characters, and compare the lowercase versions of the remaining characters.",
+    "example": "boolean isPalindrome(String s){\n  int l = 0, r = s.length()-1;\n  while(l < r){\n    while(l < r && !Character.isLetterOrDigit(s.charAt(l))) l++;\n    while(l < r && !Character.isLetterOrDigit(s.charAt(r))) r--;\n    if(Character.toLowerCase(s.charAt(l)) != Character.toLowerCase(s.charAt(r))) return false;\n    l++; r--;\n  }\n  return true;\n}"
+  },
+  {
+    "id": 43,
+    "section": "coding",
+    "title": "Write a program to implement merge sort.",
+    "difficulty": "Medium",
+    "answer": "Recursively split the array in half until each part has one element, then merge sorted halves back together in order.",
+    "example": "void mergeSort(int[] arr, int l, int r){\n  if(l >= r) return;\n  int mid = (l+r)/2;\n  mergeSort(arr, l, mid);\n  mergeSort(arr, mid+1, r);\n  merge(arr, l, mid, r); // merges the two sorted halves\n}"
+  },
+  {
+    "id": 44,
+    "section": "coding",
+    "title": "Write a program to find the middle element of a linked list in a single pass.",
+    "difficulty": "Medium",
+    "answer": "Use two pointers, slow and fast; move slow one step and fast two steps at a time. When fast reaches the end, slow is at the middle.",
+    "example": "Node findMiddle(Node head){\n  Node slow = head, fast = head;\n  while(fast != null && fast.next != null){\n    slow = slow.next;\n    fast = fast.next.next;\n  }\n  return slow;\n}"
+  },
+  {
+    "id": 45,
+    "section": "coding",
+    "title": "Write a program to detect and remove a cycle in a linked list.",
+    "difficulty": "Hard",
+    "answer": "Detect the cycle using Floyd's algorithm (slow/fast pointers). Once they meet, reset one pointer to the head and advance both one step at a time \u2014 they'll meet at the cycle's start, whose previous node's 'next' can then be set to null.",
+    "example": "void detectAndRemoveCycle(Node head){\n  Node slow = head, fast = head;\n  boolean hasCycle = false;\n  while(fast != null && fast.next != null){\n    slow = slow.next; fast = fast.next.next;\n    if(slow == fast){ hasCycle = true; break; }\n  }\n  if(!hasCycle) return;\n  slow = head;\n  Node prev = null;\n  while(slow != fast){ prev = fast; slow = slow.next; fast = fast.next; }\n  prev.next = null;\n}"
+  },
+  {
+    "id": 46,
+    "section": "coding",
+    "title": "Write a program to find the majority element in an array (the element appearing more than n/2 times).",
+    "difficulty": "Medium",
+    "answer": "Use the Boyer-Moore Voting Algorithm: maintain a candidate and a counter, incrementing the counter for matches and decrementing for mismatches, resetting the candidate when the counter hits zero.",
+    "example": "int majorityElement(int[] arr){\n  int candidate = arr[0], count = 0;\n  for(int x : arr){\n    if(count == 0) candidate = x;\n    count += (x == candidate) ? 1 : -1;\n  }\n  return candidate;\n}"
+  },
+  {
+    "id": 47,
+    "section": "coding",
+    "title": "Write a program to count the occurrences of each word in a sentence.",
+    "difficulty": "Easy",
+    "answer": "Split the sentence into words and use a HashMap to increment the count for each word as you encounter it.",
+    "example": "Map<String,Integer> wordCount(String sentence){\n  Map<String,Integer> counts = new HashMap<>();\n  for(String word : sentence.split(\"\\\\s+\")){\n    counts.put(word, counts.getOrDefault(word, 0) + 1);\n  }\n  return counts;\n}"
+  },
+  {
+    "id": 48,
+    "section": "coding",
+    "title": "Write a program to implement the insert operation for a binary search tree.",
+    "difficulty": "Medium",
+    "answer": "Recursively compare the new value with the current node: go left if smaller, right if larger, and insert once a null child position is reached.",
+    "example": "Node insert(Node root, int val){\n  if(root == null) return new Node(val);\n  if(val < root.val) root.left = insert(root.left, val);\n  else root.right = insert(root.right, val);\n  return root;\n}"
+  },
+  {
+    "id": 49,
+    "section": "coding",
+    "title": "Write a program to find the height of a binary tree.",
+    "difficulty": "Hard",
+    "answer": "Recursively compute the height of the left and right subtrees, then return 1 plus the greater of the two \u2014 the base case for a null node returns 0 (or -1, depending on convention).",
+    "example": "int height(Node node){\n  if(node == null) return 0;\n  return 1 + Math.max(height(node.left), height(node.right));\n}"
+  },
+  {
+    "id": 50,
+    "section": "coding",
+    "title": "Write a program to check if a given number is a power of two.",
+    "difficulty": "Medium",
+    "answer": "A power of two has exactly one bit set in binary, so 'n & (n-1)' will equal zero for any power of two (and n must be positive).",
+    "example": "boolean isPowerOfTwo(int n){\n  return n > 0 && (n & (n - 1)) == 0;\n}"
+  },
+  {
+    "id": 51,
+    "section": "coding",
+    "title": "Write a SQL query to find the second highest salary within each department.",
+    "difficulty": "Hard",
+    "answer": "Use a window function like DENSE_RANK() partitioned by department and ordered by salary descending, then filter for rank 2.",
+    "example": "SELECT name, dept_id, salary FROM (\n  SELECT name, dept_id, salary,\n    DENSE_RANK() OVER (PARTITION BY dept_id ORDER BY salary DESC) AS rnk\n  FROM Employee\n) ranked\nWHERE rnk = 2;"
+  },
+  {
+    "id": 52,
+    "section": "coding",
+    "title": "Write a program to reverse the order of words in a sentence.",
+    "difficulty": "Easy",
+    "answer": "Split the sentence into words, reverse the order of the resulting array, then join the words back together with spaces.",
+    "example": "String reverseWords(String s){\n  String[] words = s.trim().split(\"\\\\s+\");\n  Collections.reverse(Arrays.asList(words));\n  return String.join(\" \", words);\n}"
+  },
+  {
+    "id": 53,
+    "section": "coding",
+    "title": "Write a program to find the frequency of the most frequent element in an array.",
+    "difficulty": "Medium",
+    "answer": "Use a HashMap to count occurrences of every element, then scan the map's values to find the largest count.",
+    "example": "int maxFrequency(int[] arr){\n  Map<Integer,Integer> freq = new HashMap<>();\n  for(int x : arr) freq.put(x, freq.getOrDefault(x,0)+1);\n  return Collections.max(freq.values());\n}"
+  },
+  {
+    "id": 54,
+    "section": "coding",
+    "title": "Write a program to implement the Sieve of Eratosthenes to find all prime numbers up to n.",
+    "difficulty": "Hard",
+    "answer": "Create a boolean array marking all numbers as prime initially, then starting from 2, mark every multiple of each found prime as non-prime, leaving only true primes marked at the end.",
+    "example": "boolean[] sieve(int n){\n  boolean[] isPrime = new boolean[n+1];\n  Arrays.fill(isPrime, true);\n  isPrime[0] = isPrime[1] = false;\n  for(int i = 2; i*i <= n; i++){\n    if(isPrime[i]){\n      for(int j = i*i; j <= n; j += i) isPrime[j] = false;\n    }\n  }\n  return isPrime;\n}"
+  },
+  {
+    "id": 55,
+    "section": "technical",
+    "title": "What is a subnet mask, and what is it used for?",
+    "difficulty": "Easy",
+    "answer": "A subnet mask distinguishes the network portion of an IP address from the host portion, letting routers determine whether traffic should stay within the local network or be forwarded elsewhere."
+  },
+  {
+    "id": 56,
+    "section": "technical",
+    "title": "What is the difference between a router and a switch?",
+    "difficulty": "Easy",
+    "answer": "A switch connects devices within the same local network and forwards data based on MAC addresses. A router connects different networks together, such as a LAN to the internet, and forwards data based on IP addresses."
+  },
+  {
+    "id": 57,
+    "section": "technical",
+    "title": "What is encapsulation, and why is it valuable in software design?",
+    "difficulty": "Easy",
+    "answer": "Encapsulation bundles data and the methods that operate on it within a class, hiding internal implementation details behind a public interface. This protects data integrity and lets internal implementation change without breaking dependent code."
+  },
+  {
+    "id": 58,
+    "section": "technical",
+    "title": "What is the difference between composition and inheritance?",
+    "difficulty": "Medium",
+    "answer": "Inheritance models an 'is-a' relationship, where a subclass extends a parent class. Composition models a 'has-a' relationship, where a class contains instances of other classes as fields. Composition is often preferred since it avoids tight coupling to a rigid class hierarchy."
+  },
+  {
+    "id": 59,
+    "section": "technical",
+    "title": "What is coupling and cohesion in software design?",
+    "difficulty": "Medium",
+    "answer": "Coupling measures how dependent modules are on each other \u2014 lower coupling is better, since it lets modules change independently. Cohesion measures how closely related the responsibilities within a single module are \u2014 higher cohesion means the module does one thing well."
+  },
+  {
+    "id": 60,
+    "section": "technical",
+    "title": "What is the difference between the Waterfall model and the Agile model in SDLC?",
+    "difficulty": "Easy",
+    "answer": "Waterfall follows a strict, sequential set of phases (requirements, design, build, test, deploy) with no going back once a phase is complete. Agile breaks work into short iterative sprints with continuous feedback and the flexibility to adapt requirements as the project progresses."
+  },
+  {
+    "id": 61,
+    "section": "technical",
+    "title": "What is the difference between centralized and distributed version control?",
+    "difficulty": "Easy",
+    "answer": "Centralized systems, like SVN, rely on a single central server holding the full history. Distributed systems, like Git, give every clone the complete history, enabling offline work and more flexible branching and merging."
+  },
+  {
+    "id": 62,
+    "section": "technical",
+    "title": "What is a merge conflict in Git, and how do you resolve one?",
+    "difficulty": "Medium",
+    "answer": "A merge conflict occurs when Git can't automatically reconcile changes made to the same lines of a file on two different branches. You resolve it by manually editing the conflicting section to keep the correct combination of changes, then committing the resolved file."
+  },
+  {
+    "id": 63,
+    "section": "technical",
+    "title": "What is CI/CD?",
+    "difficulty": "Medium",
+    "answer": "Continuous Integration automatically builds and tests code every time it's pushed, catching integration issues early. Continuous Delivery/Deployment automates releasing that tested code to staging or production, reducing manual release overhead."
+  },
+  {
+    "id": 64,
+    "section": "technical",
+    "title": "What is the difference between a firewall and an antivirus?",
+    "difficulty": "Easy",
+    "answer": "A firewall monitors and controls incoming and outgoing network traffic based on security rules, acting as a barrier between trusted and untrusted networks. An antivirus scans files and running processes on a device for known malicious code patterns."
+  },
+  {
+    "id": 65,
+    "section": "technical",
+    "title": "What is two-factor authentication (2FA)?",
+    "difficulty": "Easy",
+    "answer": "2FA requires two different types of verification to log in \u2014 typically something you know, like a password, and something you have, like an OTP or authenticator app \u2014 making accounts significantly harder to compromise even if the password leaks."
+  },
+  {
+    "id": 66,
+    "section": "technical",
+    "title": "What is the difference between symmetric and asymmetric encryption?",
+    "difficulty": "Medium",
+    "answer": "Symmetric encryption uses the same key for both encryption and decryption, making it fast but requiring a secure way to share the key. Asymmetric encryption uses a public key to encrypt and a private key to decrypt, solving key distribution at the cost of more computation."
+  },
+  {
+    "id": 67,
+    "section": "technical",
+    "title": "What is cloud elasticity?",
+    "difficulty": "Medium",
+    "answer": "Elasticity is a cloud system's ability to automatically scale resources up or down based on real-time demand, so an application can handle traffic spikes without manual intervention and avoid paying for idle capacity during quiet periods."
+  },
+  {
+    "id": 68,
+    "section": "coding",
+    "title": "Write a program to delete a node from a singly linked list given only a pointer to that node (not the head).",
+    "difficulty": "Hard",
+    "answer": "Since you can't access the previous node, copy the next node's data into the current node, then point the current node's 'next' to skip over the (now duplicate) next node, effectively deleting it.",
+    "example": "void deleteNode(Node node){\n  node.data = node.next.data;\n  node.next = node.next.next;\n}"
+  },
+  {
+    "id": 69,
+    "section": "coding",
+    "title": "Write a program to remove duplicate values from a sorted linked list.",
+    "difficulty": "Medium",
+    "answer": "Since the list is sorted, duplicates are always adjacent \u2014 walk through the list and skip over any node whose value equals the value of the node right before it.",
+    "example": "void removeDuplicates(Node head){\n  Node current = head;\n  while(current != null && current.next != null){\n    if(current.data == current.next.data){\n      current.next = current.next.next;\n    } else {\n      current = current.next;\n    }\n  }\n}"
+  },
+  {
+    "id": 70,
+    "section": "coding",
+    "title": "Write a program to implement a queue using two stacks.",
+    "difficulty": "Hard",
+    "answer": "Use one stack for enqueue operations. For dequeue, if a second stack is empty, pop everything from the first stack into it (reversing order), then pop from the second stack \u2014 this gives FIFO behavior using two LIFO stacks.",
+    "example": "class QueueWithStacks {\n  Deque<Integer> in = new ArrayDeque<>(), out = new ArrayDeque<>();\n  void enqueue(int x){ in.push(x); }\n  int dequeue(){\n    if(out.isEmpty()) while(!in.isEmpty()) out.push(in.pop());\n    return out.pop();\n  }\n}"
+  },
+  {
+    "id": 71,
+    "section": "coding",
+    "title": "Write a program to implement a stack that supports retrieving the minimum element in O(1).",
+    "difficulty": "Hard",
+    "answer": "Maintain a second 'min stack' alongside the main stack, pushing the current minimum every time a new element is pushed, so the top of the min stack always reflects the minimum of the elements currently in the main stack.",
+    "example": "class MinStack {\n  Deque<Integer> stack = new ArrayDeque<>(), minStack = new ArrayDeque<>();\n  void push(int x){\n    stack.push(x);\n    minStack.push(minStack.isEmpty() ? x : Math.min(x, minStack.peek()));\n  }\n  void pop(){ stack.pop(); minStack.pop(); }\n  int getMin(){ return minStack.peek(); }\n}"
+  },
+  {
+    "id": 72,
+    "section": "coding",
+    "title": "Write a program to check if a binary tree is a valid binary search tree.",
+    "difficulty": "Hard",
+    "answer": "Recursively validate each node against a running (min, max) range: the left subtree must stay below the node's value and the right subtree must stay above it, narrowing the valid range as you descend.",
+    "example": "boolean isValidBST(Node node, Integer min, Integer max){\n  if(node == null) return true;\n  if((min != null && node.val <= min) || (max != null && node.val >= max)) return false;\n  return isValidBST(node.left, min, node.val) && isValidBST(node.right, node.val, max);\n}"
+  },
+  {
+    "id": 73,
+    "section": "coding",
+    "title": "Write a program to perform an in-order traversal of a binary tree.",
+    "difficulty": "Easy",
+    "answer": "In-order traversal visits the left subtree, then the current node, then the right subtree \u2014 for a BST, this visits nodes in sorted ascending order.",
+    "example": "void inorder(Node node){\n  if(node == null) return;\n  inorder(node.left);\n  System.out.print(node.val + \" \");\n  inorder(node.right);\n}"
+  },
+  {
+    "id": 74,
+    "section": "coding",
+    "title": "Write a program to perform a level-order (breadth-first) traversal of a binary tree.",
+    "difficulty": "Medium",
+    "answer": "Use a queue: start by enqueuing the root, then repeatedly dequeue a node, print it, and enqueue its children, until the queue is empty.",
+    "example": "void levelOrder(Node root){\n  Queue<Node> queue = new LinkedList<>();\n  queue.add(root);\n  while(!queue.isEmpty()){\n    Node node = queue.poll();\n    System.out.print(node.val + \" \");\n    if(node.left != null) queue.add(node.left);\n    if(node.right != null) queue.add(node.right);\n  }\n}"
+  },
+  {
+    "id": 75,
+    "section": "coding",
+    "title": "Write a program to count the number of leaf nodes in a binary tree.",
+    "difficulty": "Medium",
+    "answer": "A leaf node has no children. Recursively count 1 for every node where both left and right are null, and sum the counts from the left and right subtrees otherwise.",
+    "example": "int countLeaves(Node node){\n  if(node == null) return 0;\n  if(node.left == null && node.right == null) return 1;\n  return countLeaves(node.left) + countLeaves(node.right);\n}"
+  },
+  {
+    "id": 76,
+    "section": "coding",
+    "title": "Write a program to implement quicksort.",
+    "difficulty": "Hard",
+    "answer": "Pick a pivot element, partition the array so smaller elements go left and larger ones go right of the pivot, then recursively sort each partition.",
+    "example": "void quickSort(int[] arr, int low, int high){\n  if(low < high){\n    int pi = partition(arr, low, high);\n    quickSort(arr, low, pi-1);\n    quickSort(arr, pi+1, high);\n  }\n}\nint partition(int[] arr, int low, int high){\n  int pivot = arr[high], i = low-1;\n  for(int j=low;j<high;j++){\n    if(arr[j] < pivot){\n      i++;\n      int t=arr[i]; arr[i]=arr[j]; arr[j]=t;\n    }\n  }\n  int t=arr[i+1]; arr[i+1]=arr[high]; arr[high]=t;\n  return i+1;\n}"
+  },
+  {
+    "id": 77,
+    "section": "coding",
+    "title": "Write a program to find the kth largest element in an unsorted array.",
+    "difficulty": "Medium",
+    "answer": "Sort the array in descending order and return the element at index k-1, or for better average performance on large arrays, use a min-heap of size k.",
+    "example": "int kthLargest(int[] arr, int k){\n  Integer[] boxed = Arrays.stream(arr).boxed().toArray(Integer[]::new);\n  Arrays.sort(boxed, Collections.reverseOrder());\n  return boxed[k-1];\n}"
+  },
+  {
+    "id": 78,
+    "section": "coding",
+    "title": "Write a program to generate all subsets (the power set) of a given array.",
+    "difficulty": "Hard",
+    "answer": "For an array of size n, there are 2^n subsets. Iterate from 0 to 2^n - 1, and for each number, use its binary representation to decide which elements to include in that subset.",
+    "example": "void printSubsets(int[] arr){\n  int n = arr.length;\n  for(int mask=0; mask < (1<<n); mask++){\n    List<Integer> subset = new ArrayList<>();\n    for(int i=0;i<n;i++){\n      if((mask & (1<<i)) != 0) subset.add(arr[i]);\n    }\n    System.out.println(subset);\n  }\n}"
+  },
+  {
+    "id": 79,
+    "section": "coding",
+    "title": "Write a program to generate all permutations of a string.",
+    "difficulty": "Hard",
+    "answer": "Recursively fix one character at each position and swap it with every other remaining character, generating all permutations by backtracking after each recursive call.",
+    "example": "void permute(char[] arr, int k){\n  if(k == arr.length-1){\n    System.out.println(new String(arr));\n    return;\n  }\n  for(int i=k;i<arr.length;i++){\n    char t=arr[k]; arr[k]=arr[i]; arr[i]=t;\n    permute(arr, k+1);\n    t=arr[k]; arr[k]=arr[i]; arr[i]=t;\n  }\n}"
+  },
+  {
+    "id": 80,
+    "section": "coding",
+    "title": "Write a program to check if two arrays contain the same elements, regardless of order.",
+    "difficulty": "Easy",
+    "answer": "Sort both arrays and compare them element by element, or count element frequencies in both using a HashMap and compare the maps.",
+    "example": "boolean sameElements(int[] a, int[] b){\n  int[] x = a.clone(), y = b.clone();\n  Arrays.sort(x); Arrays.sort(y);\n  return Arrays.equals(x, y);\n}"
+  }
+]

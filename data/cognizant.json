@@ -1,0 +1,603 @@
+[
+  {
+    "id": 1,
+    "section": "online-test",
+    "title": "What does the Cognizant GenC assessment cover?",
+    "difficulty": "Easy",
+    "answer": "The GenC assessment (AMCAT-based) typically covers Quantitative Aptitude, Logical Reasoning, English Comprehension, Automata/coding, and sometimes a Personality/WriteX section for communication scoring."
+  },
+  {
+    "id": 2,
+    "section": "online-test",
+    "title": "What is the difference between GenC, GenC Next, and GenC Elevate?",
+    "difficulty": "Medium",
+    "answer": "GenC is the standard fresher engineering trainee track, GenC Next targets candidates with stronger coding skills for slightly more technical roles, and GenC Elevate targets candidates from non-CS backgrounds with an extended technical training program before project allocation."
+  },
+  {
+    "id": 3,
+    "section": "technical",
+    "title": "What is the difference between primary key and foreign key?",
+    "difficulty": "Easy",
+    "answer": "A primary key uniquely identifies each record in its own table and cannot be null, while a foreign key is a column in one table that references the primary key of another table, enforcing referential integrity between them.",
+    "example": "CREATE TABLE Orders (\n  OrderID INT PRIMARY KEY,\n  CustomerID INT,\n  FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)\n);"
+  },
+  {
+    "id": 4,
+    "section": "technical",
+    "title": "What is method overloading vs method overriding?",
+    "difficulty": "Medium",
+    "answer": "Overloading is defining multiple methods with the same name but different parameter lists within the same class (compile-time polymorphism). Overriding is redefining a parent class's method in a child class with the same signature (runtime polymorphism).",
+    "example": "// Overloading\nint add(int a,int b){return a+b;}\ndouble add(double a,double b){return a+b;}\n// Overriding\nclass Animal{ void sound(){} }\nclass Dog extends Animal{ void sound(){ System.out.println(\"Bark\"); } }"
+  },
+  {
+    "id": 5,
+    "section": "technical",
+    "title": "What is the difference between array and ArrayList in Java?",
+    "difficulty": "Medium",
+    "answer": "An array has a fixed size defined at creation and can hold primitives or objects, while an ArrayList is a resizable collection from java.util that only holds objects (autoboxing primitives) and offers built-in methods like add(), remove(), and contains()."
+  },
+  {
+    "id": 6,
+    "section": "technical",
+    "title": "Explain the OSI model briefly.",
+    "difficulty": "Medium",
+    "answer": "The OSI model has seven layers describing how data travels across a network: Physical, Data Link, Network, Transport, Session, Presentation, and Application. Each layer has a specific responsibility, from raw bit transmission (Physical) to user-facing services (Application).",
+    "tips": "Use the mnemonic 'Please Do Not Throw Sausage Pizza Away' to recall the order."
+  },
+  {
+    "id": 7,
+    "section": "coding",
+    "title": "Write a program to find the sum of digits of a number.",
+    "difficulty": "Easy",
+    "answer": "Repeatedly extract the last digit using modulo 10 and add it to a running sum, then remove the last digit using integer division by 10.",
+    "example": "int sumOfDigits(int n){\n  int sum=0;\n  while(n>0){\n    sum += n%10;\n    n /= 10;\n  }\n  return sum;\n}"
+  },
+  {
+    "id": 8,
+    "section": "coding",
+    "title": "Write a program to print the Fibonacci series up to n terms.",
+    "difficulty": "Easy",
+    "answer": "Start with the first two terms as 0 and 1, then generate each subsequent term as the sum of the previous two.",
+    "example": "def fibonacci(n):\n    a, b = 0, 1\n    for _ in range(n):\n        print(a, end=' ')\n        a, b = b, a + b"
+  },
+  {
+    "id": 9,
+    "section": "coding",
+    "title": "Write a function to check if a given number is an Armstrong number.",
+    "difficulty": "Medium",
+    "answer": "An Armstrong number equals the sum of its own digits each raised to the power of the number of digits. Compute digit count first, then sum each digit raised to that power and compare with the original number.",
+    "example": "boolean isArmstrong(int n){\n  int orig=n, digits=String.valueOf(n).length(), sum=0;\n  while(n>0){\n    int d=n%10;\n    sum += Math.pow(d, digits);\n    n /= 10;\n  }\n  return sum==orig;\n}"
+  },
+  {
+    "id": 10,
+    "section": "hr",
+    "title": "Tell us about a time you worked in a team.",
+    "difficulty": "Medium",
+    "answer": "Use the STAR method \u2014 Situation, Task, Action, Result \u2014 to structure a concise, specific story about a college project or hackathon, emphasizing your individual contribution and the outcome.",
+    "example": "\"During our final-year project, our team split a hospital-management system into modules. I owned the appointment-booking module, coordinated API contracts with two teammates, and we delivered on time with zero integration bugs.\""
+  },
+  {
+    "id": 11,
+    "section": "hr",
+    "title": "How do you handle pressure or tight deadlines?",
+    "difficulty": "Easy",
+    "answer": "Give a concrete example showing a practical technique \u2014 prioritizing tasks, breaking work into smaller chunks, or communicating early about blockers \u2014 rather than a vague claim like 'I stay calm.'"
+  },
+  {
+    "id": 12,
+    "section": "hr",
+    "title": "What are your salary expectations?",
+    "difficulty": "Medium",
+    "answer": "For freshers, it's usually safest to say you are open to the company's standard package for the role and are more focused on learning and growth opportunities at this stage, unless you have a specific, researched figure in mind."
+  },
+  {
+    "id": 13,
+    "section": "technical",
+    "title": "What is the difference between a shallow copy and a deep copy of an object?",
+    "difficulty": "Medium",
+    "answer": "A shallow copy duplicates an object but keeps references to the same nested objects it contains, so changes to nested data affect both copies. A deep copy recursively duplicates every nested object as well, producing a fully independent clone.",
+    "example": "// Java example using clone() (shallow by default)\nclass Box implements Cloneable {\n  int[] items;\n  public Object clone() throws CloneNotSupportedException { return super.clone(); }\n}"
+  },
+  {
+    "id": 14,
+    "section": "technical",
+    "title": "What is a race condition, and how can it be prevented?",
+    "difficulty": "Medium",
+    "answer": "A race condition occurs when two or more threads access shared data concurrently and the final result depends on the unpredictable timing of their execution. It's prevented using synchronization mechanisms like locks, synchronized blocks, or atomic variables to ensure only one thread modifies shared state at a time."
+  },
+  {
+    "id": 15,
+    "section": "technical",
+    "title": "What is the difference between IPv4 and IPv6?",
+    "difficulty": "Easy",
+    "answer": "IPv4 uses 32-bit addresses (about 4.3 billion possible addresses) written in dotted-decimal form, while IPv6 uses 128-bit addresses written in hexadecimal, offering a vastly larger address space to accommodate the growing number of internet-connected devices."
+  },
+  {
+    "id": 16,
+    "section": "technical",
+    "title": "What is the difference between a session and a cookie in web applications?",
+    "difficulty": "Easy",
+    "answer": "A cookie is a small piece of data stored on the client's browser and sent with every request to the same domain. A session stores user data on the server side, with only a session ID (often stored in a cookie) shared with the client, making sessions generally more secure for sensitive data."
+  },
+  {
+    "id": 17,
+    "section": "technical",
+    "title": "What are the SOLID principles of object-oriented design?",
+    "difficulty": "Hard",
+    "answer": "SOLID stands for Single Responsibility (a class should have one reason to change), Open/Closed (open for extension, closed for modification), Liskov Substitution (subtypes must be substitutable for their base types), Interface Segregation (prefer many small interfaces over one large one), and Dependency Inversion (depend on abstractions, not concrete implementations)."
+  },
+  {
+    "id": 18,
+    "section": "technical",
+    "title": "What is the difference between authentication and authorization?",
+    "difficulty": "Easy",
+    "answer": "Authentication verifies who a user is (e.g., logging in with a username and password), while authorization determines what an already-authenticated user is allowed to do or access (e.g., admin vs regular-user permissions)."
+  },
+  {
+    "id": 19,
+    "section": "coding",
+    "title": "Write a program to find the longest common prefix among an array of strings.",
+    "difficulty": "Medium",
+    "answer": "Take the first string as an initial guess for the prefix, then progressively shorten it until it matches the start of every other string in the array.",
+    "example": "String longestCommonPrefix(String[] strs){\n  if(strs.length==0) return \"\";\n  String prefix = strs[0];\n  for(int i=1;i<strs.length;i++){\n    while(!strs[i].startsWith(prefix)){\n      prefix = prefix.substring(0, prefix.length()-1);\n    }\n  }\n  return prefix;\n}"
+  },
+  {
+    "id": 20,
+    "section": "coding",
+    "title": "Write a program to check for balanced parentheses in an expression.",
+    "difficulty": "Medium",
+    "answer": "Use a stack: push every opening bracket, and on each closing bracket, pop and check it matches the corresponding opening bracket. The expression is balanced only if the stack is empty at the end.",
+    "example": "boolean isBalanced(String s){\n  Deque<Character> stack = new ArrayDeque<>();\n  for(char c: s.toCharArray()){\n    if(c=='('||c=='['||c=='{') stack.push(c);\n    else {\n      if(stack.isEmpty()) return false;\n      char top = stack.pop();\n      if((c==')' && top!='(') || (c==']' && top!='[') || (c=='}' && top!='{')) return false;\n    }\n  }\n  return stack.isEmpty();\n}"
+  },
+  {
+    "id": 21,
+    "section": "coding",
+    "title": "Write a program to merge two sorted arrays into one sorted array.",
+    "difficulty": "Medium",
+    "answer": "Use two pointers, one for each array, repeatedly picking the smaller current element and advancing that pointer until both arrays are exhausted.",
+    "example": "int[] merge(int[] a, int[] b){\n  int[] result = new int[a.length+b.length];\n  int i=0,j=0,k=0;\n  while(i<a.length && j<b.length)\n    result[k++] = a[i]<=b[j] ? a[i++] : b[j++];\n  while(i<a.length) result[k++]=a[i++];\n  while(j<b.length) result[k++]=b[j++];\n  return result;\n}"
+  },
+  {
+    "id": 22,
+    "section": "coding",
+    "title": "Write a program to find the first non-repeating character in a string.",
+    "difficulty": "Medium",
+    "answer": "Count the frequency of each character using a HashMap, then iterate through the string again in order and return the first character whose count is exactly one.",
+    "example": "Character firstNonRepeating(String s){\n  Map<Character,Integer> freq = new LinkedHashMap<>();\n  for(char c: s.toCharArray()) freq.put(c, freq.getOrDefault(c,0)+1);\n  for(char c: s.toCharArray()) if(freq.get(c)==1) return c;\n  return null;\n}"
+  },
+  {
+    "id": 23,
+    "section": "coding",
+    "title": "Write a program to implement insertion sort.",
+    "difficulty": "Easy",
+    "answer": "Build the sorted array one element at a time, taking each new element and inserting it into its correct position among the already-sorted elements before it.",
+    "example": "void insertionSort(int[] arr){\n  for(int i=1;i<arr.length;i++){\n    int key=arr[i], j=i-1;\n    while(j>=0 && arr[j]>key){\n      arr[j+1]=arr[j]; j--;\n    }\n    arr[j+1]=key;\n  }\n}"
+  },
+  {
+    "id": 24,
+    "section": "coding",
+    "title": "Write a SQL query to find the total salary paid per department.",
+    "difficulty": "Easy",
+    "answer": "Group employees by department and sum their salary column within each group.",
+    "example": "SELECT dept_id, SUM(salary) AS total_salary\nFROM Employee\nGROUP BY dept_id;"
+  },
+  {
+    "id": 25,
+    "section": "technical",
+    "title": "What is the difference between == and .equals() when comparing objects in Java?",
+    "difficulty": "Easy",
+    "answer": "== compares object references (memory addresses), while .equals() compares logical content and can be overridden by a class to define what equality actually means for its instances, as String does."
+  },
+  {
+    "id": 26,
+    "section": "technical",
+    "title": "What is a B+ Tree, and how does it differ from a B-Tree?",
+    "difficulty": "Medium",
+    "answer": "Both are balanced tree structures used for indexing, but a B+ Tree stores all actual data only in leaf nodes (internal nodes hold just keys for navigation) and links leaf nodes together, making range queries and sequential scans much faster than a plain B-Tree."
+  },
+  {
+    "id": 27,
+    "section": "technical",
+    "title": "What is the difference between vertical and horizontal partitioning of a database table?",
+    "difficulty": "Medium",
+    "answer": "Vertical partitioning splits a table by columns, storing different columns in different tables (useful when some columns are accessed far more often than others). Horizontal partitioning splits a table by rows, distributing them across partitions typically based on a range or hash of a key column."
+  },
+  {
+    "id": 28,
+    "section": "technical",
+    "title": "What is the difference between internal and external fragmentation?",
+    "difficulty": "Easy",
+    "answer": "Internal fragmentation happens when allocated memory blocks are larger than needed, wasting space inside the block. External fragmentation happens when free memory is scattered in small chunks between allocated blocks, so even if total free space is enough, no single chunk is large enough for a new request."
+  },
+  {
+    "id": 29,
+    "section": "technical",
+    "title": "What is a JWT (JSON Web Token), and what is it used for?",
+    "difficulty": "Medium",
+    "answer": "A JWT is a compact, digitally signed token used to securely transmit claims (like user identity) between parties, commonly used for stateless authentication \u2014 the server verifies the signature instead of looking up a session, since the token itself carries the needed information."
+  },
+  {
+    "id": 30,
+    "section": "technical",
+    "title": "What is the difference between optimistic and pessimistic locking?",
+    "difficulty": "Hard",
+    "answer": "Pessimistic locking locks a resource before reading it, blocking other transactions until it's released, which prevents conflicts but reduces concurrency. Optimistic locking allows concurrent reads and only checks for conflicts (often via a version number) at write time, rolling back if another transaction changed the data first."
+  },
+  {
+    "id": 31,
+    "section": "technical",
+    "title": "What is the difference between a while loop and a do-while loop?",
+    "difficulty": "Easy",
+    "answer": "A while loop checks its condition before the first iteration, so the body may never execute. A do-while loop checks the condition after the body runs, guaranteeing the body executes at least once."
+  },
+  {
+    "id": 32,
+    "section": "technical",
+    "title": "What is reflection in Java?",
+    "difficulty": "Medium",
+    "answer": "Reflection is the ability of a program to inspect and modify its own classes, methods, and fields at runtime, even ones it doesn't know about at compile time \u2014 used heavily by frameworks for dependency injection, serialization, and testing tools."
+  },
+  {
+    "id": 33,
+    "section": "technical",
+    "title": "What is the advantage of using a thread pool instead of creating a new thread for every task?",
+    "difficulty": "Medium",
+    "answer": "Creating threads has overhead (memory, OS scheduling). A thread pool reuses a fixed set of worker threads across many tasks, reducing that overhead and letting you control the maximum level of concurrency to avoid overwhelming the system."
+  },
+  {
+    "id": 34,
+    "section": "technical",
+    "title": "What is the difference between a checked and an unchecked exception in Java?",
+    "difficulty": "Medium",
+    "answer": "Checked exceptions (like IOException) must be declared with 'throws' or caught at compile time, representing recoverable conditions the caller should anticipate. Unchecked exceptions extend RuntimeException, aren't compiler-enforced, and usually indicate programming bugs like null dereferences."
+  },
+  {
+    "id": 35,
+    "section": "technical",
+    "title": "What is CORS, and why does it matter for web applications?",
+    "difficulty": "Medium",
+    "answer": "CORS (Cross-Origin Resource Sharing) is a browser security mechanism that restricts web pages from making requests to a different domain than the one that served the page, unless the target server explicitly allows it via response headers \u2014 protecting users from malicious cross-site requests."
+  },
+  {
+    "id": 36,
+    "section": "technical",
+    "title": "What is the difference between a stored procedure and a function in SQL?",
+    "difficulty": "Medium",
+    "answer": "A stored procedure can perform actions (insert, update, delete) and doesn't have to return a value, while a function must return a single value and is typically restricted from modifying database state, allowing it to be used directly inside SELECT statements."
+  },
+  {
+    "id": 37,
+    "section": "technical",
+    "title": "What is sharding in databases?",
+    "difficulty": "Hard",
+    "answer": "Sharding splits a large database horizontally across multiple servers, with each shard holding a subset of rows (often partitioned by a key like user ID range), allowing the system to scale write throughput and storage beyond what one server can handle."
+  },
+  {
+    "id": 38,
+    "section": "technical",
+    "title": "What is the difference between a compiler and a linker?",
+    "difficulty": "Easy",
+    "answer": "A compiler translates source code into object code (machine instructions) for a single file. A linker then combines multiple object files and resolves references between them (like function calls across files) into a single executable."
+  },
+  {
+    "id": 39,
+    "section": "technical",
+    "title": "What is idempotency in the context of REST APIs?",
+    "difficulty": "Medium",
+    "answer": "An idempotent operation produces the same result no matter how many times it's performed. GET, PUT, and DELETE are expected to be idempotent (calling them repeatedly has the same effect as calling once), while POST typically is not, since it usually creates a new resource each time."
+  },
+  {
+    "id": 40,
+    "section": "coding",
+    "title": "Write a program to find the second smallest element in an array.",
+    "difficulty": "Easy",
+    "answer": "Track two variables, smallest and secondSmallest, updating them in a single pass through the array as smaller values are found.",
+    "example": "int secondSmallest(int[] arr){\n  int first = Integer.MAX_VALUE, second = Integer.MAX_VALUE;\n  for(int x : arr){\n    if(x < first){ second = first; first = x; }\n    else if(x < second && x != first){ second = x; }\n  }\n  return second;\n}"
+  },
+  {
+    "id": 41,
+    "section": "coding",
+    "title": "Write a program to check if a binary tree is a valid binary search tree.",
+    "difficulty": "Medium",
+    "answer": "Recursively validate each node against a valid (min, max) range, narrowing that range as you move left (updating max) or right (updating min) so every node stays within bounds set by its ancestors.",
+    "example": "boolean isValidBST(Node node, long min, long max){\n  if(node == null) return true;\n  if(node.val <= min || node.val >= max) return false;\n  return isValidBST(node.left, min, node.val) && isValidBST(node.right, node.val, max);\n}"
+  },
+  {
+    "id": 42,
+    "section": "coding",
+    "title": "Write a program to remove all duplicate characters from a string.",
+    "difficulty": "Easy",
+    "answer": "Use a LinkedHashSet (or a seen-set with manual iteration) to preserve order while automatically discarding repeated characters.",
+    "example": "String removeDuplicateChars(String s){\n  StringBuilder sb = new StringBuilder();\n  Set<Character> seen = new LinkedHashSet<>();\n  for(char c : s.toCharArray()) seen.add(c);\n  for(char c : seen) sb.append(c);\n  return sb.toString();\n}"
+  },
+  {
+    "id": 43,
+    "section": "coding",
+    "title": "Write a program to repeatedly sum the digits of a number until a single digit is obtained.",
+    "difficulty": "Easy",
+    "answer": "Repeatedly compute the digit sum of the number and replace the number with that sum until the result is less than 10.",
+    "example": "int digitalRoot(int n){\n  while(n >= 10){\n    int sum = 0;\n    while(n > 0){ sum += n % 10; n /= 10; }\n    n = sum;\n  }\n  return n;\n}"
+  },
+  {
+    "id": 44,
+    "section": "coding",
+    "title": "Write a program to implement a circular queue using an array.",
+    "difficulty": "Medium",
+    "answer": "Track front and rear indices with modulo arithmetic so they wrap around to the start of the array once they reach the end, reusing freed slots instead of shifting elements.",
+    "example": "class CircularQueue {\n  int[] arr; int front = 0, rear = -1, size = 0, capacity;\n  CircularQueue(int cap){ capacity = cap; arr = new int[cap]; }\n  void enqueue(int x){\n    if(size == capacity) return;\n    rear = (rear + 1) % capacity;\n    arr[rear] = x; size++;\n  }\n  int dequeue(){\n    int val = arr[front];\n    front = (front + 1) % capacity; size--;\n    return val;\n  }\n}"
+  },
+  {
+    "id": 45,
+    "section": "coding",
+    "title": "Write a program to find the shortest path between two nodes in an unweighted graph using BFS.",
+    "difficulty": "Hard",
+    "answer": "BFS explores nodes level by level using a queue, so the first time you reach the target node, the number of steps taken is guaranteed to be the shortest path in an unweighted graph.",
+    "example": "int shortestPath(Map<Integer,List<Integer>> graph, int start, int target){\n  Queue<Integer> queue = new LinkedList<>();\n  Map<Integer,Integer> dist = new HashMap<>();\n  queue.add(start); dist.put(start, 0);\n  while(!queue.isEmpty()){\n    int node = queue.poll();\n    if(node == target) return dist.get(node);\n    for(int neighbor : graph.getOrDefault(node, new ArrayList<>())){\n      if(!dist.containsKey(neighbor)){\n        dist.put(neighbor, dist.get(node) + 1);\n        queue.add(neighbor);\n      }\n    }\n  }\n  return -1;\n}"
+  },
+  {
+    "id": 46,
+    "section": "coding",
+    "title": "Write a program to check if two rectangles (given as coordinates) overlap.",
+    "difficulty": "Medium",
+    "answer": "Two axis-aligned rectangles do NOT overlap if one is entirely to the left, right, above, or below the other; overlap is simply the negation of all four of those conditions.",
+    "example": "boolean overlap(int[] r1, int[] r2){\n  // r = [x1, y1, x2, y2] (bottom-left, top-right)\n  return !(r1[2] <= r2[0] || r2[2] <= r1[0] || r1[3] <= r2[1] || r2[3] <= r1[1]);\n}"
+  },
+  {
+    "id": 47,
+    "section": "coding",
+    "title": "Write a program to convert a Roman numeral to an integer.",
+    "difficulty": "Medium",
+    "answer": "Map each Roman symbol to its value and scan left to right; if a symbol's value is less than the one following it, subtract it, otherwise add it \u2014 this handles subtractive cases like IV and IX correctly.",
+    "example": "int romanToInt(String s){\n  Map<Character,Integer> vals = Map.of('I',1,'V',5,'X',10,'L',50,'C',100,'D',500,'M',1000);\n  int total = 0;\n  for(int i = 0; i < s.length(); i++){\n    int curr = vals.get(s.charAt(i));\n    int next = (i+1 < s.length()) ? vals.get(s.charAt(i+1)) : 0;\n    total += (curr < next) ? -curr : curr;\n  }\n  return total;\n}"
+  },
+  {
+    "id": 48,
+    "section": "coding",
+    "title": "Write a program to find all anagram substrings of a pattern within a larger string.",
+    "difficulty": "Hard",
+    "answer": "Use a sliding window equal to the pattern's length, maintaining a character-frequency map of the current window and comparing it to the pattern's frequency map at each position.",
+    "example": "boolean isAnagramMatch(int[] windowFreq, int[] patternFreq){\n  return Arrays.equals(windowFreq, patternFreq);\n}\n// Slide a window of pattern.length() across the string,\n// updating windowFreq by adding the new char and removing the old one each step."
+  },
+  {
+    "id": 49,
+    "section": "coding",
+    "title": "Write a program to solve the N-Queens problem for a given N (print one valid arrangement).",
+    "difficulty": "Hard",
+    "answer": "Use backtracking: place a queen in each row one at a time, checking that it doesn't share a column or diagonal with any previously placed queen, and backtrack if no valid column is found in the current row.",
+    "example": "boolean isSafe(int[] cols, int row, int col){\n  for(int r = 0; r < row; r++){\n    if(cols[r] == col || Math.abs(cols[r]-col) == row-r) return false;\n  }\n  return true;\n}"
+  },
+  {
+    "id": 50,
+    "section": "coding",
+    "title": "Write a program to flatten a nested list of integers into a single flat list.",
+    "difficulty": "Medium",
+    "answer": "Recursively check each element: if it's a list, recurse into it and extend the result; if it's an integer, append it directly.",
+    "example": "void flatten(Object item, List<Integer> result){\n  if(item instanceof List){\n    for(Object sub : (List<?>) item) flatten(sub, result);\n  } else {\n    result.add((Integer) item);\n  }\n}"
+  },
+  {
+    "id": 51,
+    "section": "coding",
+    "title": "Write a SQL query to find employees who earn more than their manager.",
+    "difficulty": "Medium",
+    "answer": "Self-join the Employee table to itself, matching each employee's manager_id to the manager's id, and filter where the employee's salary exceeds the manager's.",
+    "example": "SELECT e.name AS employee\nFROM Employee e\nJOIN Employee m ON e.manager_id = m.id\nWHERE e.salary > m.salary;"
+  },
+  {
+    "id": 52,
+    "section": "coding",
+    "title": "Write a program to find the next greater element for every element in an array.",
+    "difficulty": "Medium",
+    "answer": "Use a stack: iterate from right to left, popping elements smaller than or equal to the current one, then the top of the stack (if any) is the next greater element for the current position.",
+    "example": "int[] nextGreaterElement(int[] arr){\n  int[] result = new int[arr.length];\n  Deque<Integer> stack = new ArrayDeque<>();\n  for(int i = arr.length-1; i >= 0; i--){\n    while(!stack.isEmpty() && stack.peek() <= arr[i]) stack.pop();\n    result[i] = stack.isEmpty() ? -1 : stack.peek();\n    stack.push(arr[i]);\n  }\n  return result;\n}"
+  },
+  {
+    "id": 53,
+    "section": "coding",
+    "title": "Write a program to implement an LRU (Least Recently Used) cache.",
+    "difficulty": "Hard",
+    "answer": "Use a LinkedHashMap (or a HashMap plus a doubly linked list) so recently accessed entries move to the end, and when the cache exceeds capacity, evict the entry at the front (least recently used).",
+    "example": "class LRUCache extends LinkedHashMap<Integer,Integer> {\n  private int capacity;\n  LRUCache(int capacity){\n    super(capacity, 0.75f, true);\n    this.capacity = capacity;\n  }\n  protected boolean removeEldestEntry(Map.Entry<Integer,Integer> eldest){\n    return size() > capacity;\n  }\n}"
+  },
+  {
+    "id": 54,
+    "section": "coding",
+    "title": "Write a program to find the GCD and LCM of two numbers.",
+    "difficulty": "Easy",
+    "answer": "Compute GCD using the Euclidean algorithm, then derive LCM using the identity LCM(a,b) = (a * b) / GCD(a,b).",
+    "example": "int gcd(int a, int b){ return b == 0 ? a : gcd(b, a % b); }\nint lcm(int a, int b){ return (a * b) / gcd(a, b); }"
+  },
+  {
+    "id": 55,
+    "section": "coding",
+    "title": "Write a program to check if a given string can be segmented into space-separated dictionary words (the Word Break problem).",
+    "difficulty": "Hard",
+    "answer": "Use dynamic programming: build a boolean array where dp[i] is true if the substring ending at index i can be segmented, checking every earlier split point j where dp[j] is true and the substring from j to i is a valid dictionary word.",
+    "example": "boolean wordBreak(String s, Set<String> dict){\n  boolean[] dp = new boolean[s.length()+1];\n  dp[0] = true;\n  for(int i = 1; i <= s.length(); i++){\n    for(int j = 0; j < i; j++){\n      if(dp[j] && dict.contains(s.substring(j, i))){\n        dp[i] = true; break;\n      }\n    }\n  }\n  return dp[s.length()];\n}"
+  },
+  {
+    "id": 56,
+    "section": "technical",
+    "title": "What is the difference between a firewall and an antivirus?",
+    "difficulty": "Easy",
+    "answer": "A firewall monitors and controls incoming and outgoing network traffic based on security rules, acting as a barrier between trusted and untrusted networks. An antivirus scans files and running processes on a device for known malicious code patterns."
+  },
+  {
+    "id": 57,
+    "section": "technical",
+    "title": "What is two-factor authentication (2FA)?",
+    "difficulty": "Easy",
+    "answer": "2FA requires two different types of verification to log in \u2014 typically something you know, like a password, and something you have, like an OTP or authenticator app \u2014 making accounts significantly harder to compromise even if the password leaks."
+  },
+  {
+    "id": 58,
+    "section": "technical",
+    "title": "What is the difference between symmetric and asymmetric encryption?",
+    "difficulty": "Medium",
+    "answer": "Symmetric encryption uses the same key for both encryption and decryption, making it fast but requiring a secure way to share the key. Asymmetric encryption uses a public key to encrypt and a private key to decrypt, solving key distribution at the cost of more computation."
+  },
+  {
+    "id": 59,
+    "section": "technical",
+    "title": "What is cloud elasticity?",
+    "difficulty": "Medium",
+    "answer": "Elasticity is a cloud system's ability to automatically scale resources up or down based on real-time demand, so an application can handle traffic spikes without manual intervention and avoid paying for idle capacity during quiet periods."
+  },
+  {
+    "id": 60,
+    "section": "technical",
+    "title": "What is the difference between a public cloud, private cloud, and hybrid cloud?",
+    "difficulty": "Easy",
+    "answer": "A public cloud is shared infrastructure operated by a third-party provider like AWS or Azure. A private cloud is dedicated infrastructure used by a single organization for more control. A hybrid cloud combines both, letting sensitive workloads stay private while other workloads scale on public infrastructure."
+  },
+  {
+    "id": 61,
+    "section": "technical",
+    "title": "What is the difference between black-box testing and white-box testing?",
+    "difficulty": "Easy",
+    "answer": "Black-box testing evaluates functionality purely through inputs and expected outputs, without knowledge of internal code. White-box testing examines the internal logic and structure of the code itself, typically performed by developers writing unit tests."
+  },
+  {
+    "id": 62,
+    "section": "technical",
+    "title": "What is a smoke test in software testing?",
+    "difficulty": "Easy",
+    "answer": "A smoke test is a quick, shallow test suite run on a new build to verify the most critical functionality works at all before investing time in deeper testing \u2014 if it fails, the build is rejected outright."
+  },
+  {
+    "id": 63,
+    "section": "technical",
+    "title": "What is the difference between HTTP and HTTPS?",
+    "difficulty": "Easy",
+    "answer": "HTTP transmits data in plain text, making it vulnerable to interception. HTTPS adds a layer of encryption (TLS/SSL) on top of HTTP, protecting data in transit from eavesdropping and tampering."
+  },
+  {
+    "id": 64,
+    "section": "technical",
+    "title": "What is an API gateway?",
+    "difficulty": "Medium",
+    "answer": "An API gateway is a single entry point that sits in front of multiple backend services, handling cross-cutting concerns like authentication, rate limiting, routing, and logging, so individual services don't need to reimplement them."
+  },
+  {
+    "id": 65,
+    "section": "technical",
+    "title": "What is the difference between vertical partitioning and horizontal partitioning (sharding) of a database?",
+    "difficulty": "Hard",
+    "answer": "Vertical partitioning splits a table by columns, storing different columns separately \u2014 useful when some columns are accessed far more often than others. Horizontal partitioning (sharding) splits a table by rows across multiple servers, distributing the same schema across data subsets to scale storage and throughput."
+  },
+  {
+    "id": 66,
+    "section": "technical",
+    "title": "What is the difference between a linear and a non-linear data structure?",
+    "difficulty": "Easy",
+    "answer": "A linear data structure arranges elements sequentially, where each element connects to at most one previous and one next element, as in arrays, linked lists, stacks, and queues. A non-linear data structure allows elements to connect to multiple others, as in trees and graphs."
+  },
+  {
+    "id": 67,
+    "section": "technical",
+    "title": "What is a binary search tree (BST), and what property must it satisfy?",
+    "difficulty": "Medium",
+    "answer": "A BST is a binary tree where, for every node, all values in its left subtree are smaller and all values in its right subtree are larger than the node itself. This property enables O(log n) average-case search, insertion, and deletion on a balanced tree."
+  },
+  {
+    "id": 68,
+    "section": "technical",
+    "title": "What is the time complexity of common HashMap operations, and when can it degrade?",
+    "difficulty": "Medium",
+    "answer": "In the average case, get(), put(), and remove() on a HashMap run in O(1) time due to direct bucket addressing via hashing. In the worst case, with many hash collisions, this can degrade toward O(n), though modern implementations mitigate this by treeifying large buckets."
+  },
+  {
+    "id": 69,
+    "section": "coding",
+    "title": "Write a program to implement quicksort.",
+    "difficulty": "Hard",
+    "answer": "Pick a pivot element, partition the array so smaller elements go left and larger ones go right of the pivot, then recursively sort each partition.",
+    "example": "void quickSort(int[] arr, int low, int high){\n  if(low < high){\n    int pi = partition(arr, low, high);\n    quickSort(arr, low, pi-1);\n    quickSort(arr, pi+1, high);\n  }\n}\nint partition(int[] arr, int low, int high){\n  int pivot = arr[high], i = low-1;\n  for(int j=low;j<high;j++){\n    if(arr[j] < pivot){\n      i++;\n      int t=arr[i]; arr[i]=arr[j]; arr[j]=t;\n    }\n  }\n  int t=arr[i+1]; arr[i+1]=arr[high]; arr[high]=t;\n  return i+1;\n}"
+  },
+  {
+    "id": 70,
+    "section": "coding",
+    "title": "Write a program to implement merge sort.",
+    "difficulty": "Hard",
+    "answer": "Recursively split the array in half until each piece has one element, then merge pairs of sorted pieces back together in order, repeating until the whole array is merged and sorted.",
+    "example": "void mergeSort(int[] arr, int l, int r){\n  if(l < r){\n    int m = (l+r)/2;\n    mergeSort(arr, l, m);\n    mergeSort(arr, m+1, r);\n    merge(arr, l, m, r);\n  }\n}"
+  },
+  {
+    "id": 71,
+    "section": "coding",
+    "title": "Write a program to find the kth largest element in an unsorted array.",
+    "difficulty": "Medium",
+    "answer": "Sort the array in descending order and return the element at index k-1, or for better average performance on large arrays, use a min-heap of size k.",
+    "example": "int kthLargest(int[] arr, int k){\n  Integer[] boxed = Arrays.stream(arr).boxed().toArray(Integer[]::new);\n  Arrays.sort(boxed, Collections.reverseOrder());\n  return boxed[k-1];\n}"
+  },
+  {
+    "id": 72,
+    "section": "coding",
+    "title": "Write a program to generate all subsets (the power set) of a given array.",
+    "difficulty": "Hard",
+    "answer": "For an array of size n, there are 2^n subsets. Iterate from 0 to 2^n - 1, and for each number, use its binary representation to decide which elements to include in that subset.",
+    "example": "void printSubsets(int[] arr){\n  int n = arr.length;\n  for(int mask=0; mask < (1<<n); mask++){\n    List<Integer> subset = new ArrayList<>();\n    for(int i=0;i<n;i++){\n      if((mask & (1<<i)) != 0) subset.add(arr[i]);\n    }\n    System.out.println(subset);\n  }\n}"
+  },
+  {
+    "id": 73,
+    "section": "coding",
+    "title": "Write a program to generate all permutations of a string.",
+    "difficulty": "Hard",
+    "answer": "Recursively fix one character at each position and swap it with every other remaining character, generating all permutations by backtracking after each recursive call.",
+    "example": "void permute(char[] arr, int k){\n  if(k == arr.length-1){\n    System.out.println(new String(arr));\n    return;\n  }\n  for(int i=k;i<arr.length;i++){\n    char t=arr[k]; arr[k]=arr[i]; arr[i]=t;\n    permute(arr, k+1);\n    t=arr[k]; arr[k]=arr[i]; arr[i]=t;\n  }\n}"
+  },
+  {
+    "id": 74,
+    "section": "coding",
+    "title": "Write a program to check if two arrays contain the same elements, regardless of order.",
+    "difficulty": "Easy",
+    "answer": "Sort both arrays and compare them element by element, or count element frequencies in both using a HashMap and compare the maps.",
+    "example": "boolean sameElements(int[] a, int[] b){\n  int[] x = a.clone(), y = b.clone();\n  Arrays.sort(x); Arrays.sort(y);\n  return Arrays.equals(x, y);\n}"
+  },
+  {
+    "id": 75,
+    "section": "coding",
+    "title": "Write a program to find the equilibrium index of an array, where the sum of elements to the left equals the sum to the right.",
+    "difficulty": "Hard",
+    "answer": "Compute the total sum first, then iterate while tracking a running left sum; at each index, the right sum is total minus left minus the current element, and you compare left sum to right sum.",
+    "example": "int equilibriumIndex(int[] arr){\n  int total = Arrays.stream(arr).sum(), leftSum = 0;\n  for(int i=0;i<arr.length;i++){\n    total -= arr[i];\n    if(leftSum == total) return i;\n    leftSum += arr[i];\n  }\n  return -1;\n}"
+  },
+  {
+    "id": 76,
+    "section": "coding",
+    "title": "Write a program to move all zeros in an array to the end while preserving the order of non-zero elements.",
+    "difficulty": "Medium",
+    "answer": "Use a pointer to track where the next non-zero element should go; iterate through the array, moving non-zero elements to that pointer's position, then fill the remaining slots with zeros.",
+    "example": "void moveZeros(int[] arr){\n  int insertPos = 0;\n  for(int x : arr) if(x != 0) arr[insertPos++] = x;\n  while(insertPos < arr.length) arr[insertPos++] = 0;\n}"
+  },
+  {
+    "id": 77,
+    "section": "coding",
+    "title": "Write a program to find the majority element in an array, one that appears more than n/2 times.",
+    "difficulty": "Medium",
+    "answer": "Use Boyer-Moore Voting: track a candidate and a count; increment the count when you see the candidate again, decrement otherwise, and switch candidates when the count hits zero \u2014 the surviving candidate is the majority element.",
+    "example": "int majorityElement(int[] arr){\n  int count = 0, candidate = 0;\n  for(int x : arr){\n    if(count == 0) candidate = x;\n    count += (x == candidate) ? 1 : -1;\n  }\n  return candidate;\n}"
+  },
+  {
+    "id": 78,
+    "section": "coding",
+    "title": "Explain, at a conceptual level, how you would design a simple LRU (Least Recently Used) cache.",
+    "difficulty": "Hard",
+    "answer": "Combine a HashMap for O(1) key lookup with a doubly linked list to track usage order. On access, move the accessed node to the front (most recently used). When capacity is exceeded, remove the node at the back (least recently used), keeping both structures in sync."
+  },
+  {
+    "id": 79,
+    "section": "coding",
+    "title": "Write a function to check if a string has all unique characters.",
+    "difficulty": "Easy",
+    "answer": "Use a HashSet (or a boolean array for a known character set like lowercase letters) to track characters seen so far, returning false the moment a repeat is found.",
+    "example": "boolean hasUniqueChars(String s){\n  Set<Character> seen = new HashSet<>();\n  for(char c : s.toCharArray()){\n    if(!seen.add(c)) return false;\n  }\n  return true;\n}"
+  },
+  {
+    "id": 80,
+    "section": "coding",
+    "title": "Write a program to find the number of ways to climb n stairs, taking 1 or 2 steps at a time.",
+    "difficulty": "Medium",
+    "answer": "This is structurally identical to the Fibonacci sequence: the number of ways to reach step n equals the ways to reach step n-1 plus the ways to reach step n-2, solvable efficiently with dynamic programming.",
+    "example": "int climbStairs(int n){\n  if(n <= 2) return n;\n  int a=1, b=2;\n  for(int i=3;i<=n;i++){\n    int c = a+b; a=b; b=c;\n  }\n  return b;\n}"
+  }
+]

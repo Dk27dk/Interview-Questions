@@ -1,0 +1,601 @@
+[
+  {
+    "id": 1,
+    "section": "online-test",
+    "title": "What is the Accenture Cognitive Assessment?",
+    "difficulty": "Easy",
+    "answer": "It's an aptitude and reasoning-based test measuring numerical, verbal, and logical ability alongside situational judgment questions that assess how you'd respond to realistic workplace scenarios."
+  },
+  {
+    "id": 2,
+    "section": "technical",
+    "title": "What is the difference between SQL and NoSQL databases?",
+    "difficulty": "Medium",
+    "answer": "SQL databases are relational, use structured schemas and tables, and enforce ACID transactions (e.g., MySQL, PostgreSQL). NoSQL databases are non-relational, use flexible schemas like documents or key-value pairs, and prioritize scalability and speed over strict consistency (e.g., MongoDB, Cassandra)."
+  },
+  {
+    "id": 3,
+    "section": "technical",
+    "title": "What is cloud computing and name its main service models.",
+    "difficulty": "Easy",
+    "answer": "Cloud computing delivers computing resources (servers, storage, databases) over the internet on demand. Its main models are IaaS (Infrastructure as a Service), PaaS (Platform as a Service), and SaaS (Software as a Service), differing in how much of the stack the provider manages for you."
+  },
+  {
+    "id": 4,
+    "section": "technical",
+    "title": "Explain the concept of Agile methodology.",
+    "difficulty": "Medium",
+    "answer": "Agile is an iterative software development approach that breaks work into short cycles called sprints, emphasizing continuous feedback, adaptability to change, and close collaboration between developers and stakeholders, in contrast to the rigid, sequential Waterfall model."
+  },
+  {
+    "id": 5,
+    "section": "technical",
+    "title": "What is the difference between GET and POST HTTP methods?",
+    "difficulty": "Easy",
+    "answer": "GET requests retrieve data and append parameters to the URL, making them visible, cacheable, and limited in size. POST requests send data in the request body, are not cached by default, and are used for submitting data like form entries.",
+    "example": "GET /search?query=java\nPOST /users  (body: { \"name\": \"Asha\" })"
+  },
+  {
+    "id": 6,
+    "section": "technical",
+    "title": "What is version control, and why is Git widely used?",
+    "difficulty": "Easy",
+    "answer": "Version control tracks changes to code over time, allowing teams to collaborate, revert mistakes, and manage parallel work through branches. Git is popular because it's distributed (every clone has full history), fast, and integrates with platforms like GitHub for collaboration."
+  },
+  {
+    "id": 7,
+    "section": "coding",
+    "title": "Write a query to find the second highest salary from an Employee table.",
+    "difficulty": "Medium",
+    "answer": "Use a subquery with MAX() excluding the top salary, or use LIMIT/OFFSET with ORDER BY.",
+    "example": "SELECT MAX(salary) AS SecondHighest\nFROM Employee\nWHERE salary < (SELECT MAX(salary) FROM Employee);"
+  },
+  {
+    "id": 8,
+    "section": "coding",
+    "title": "Write a program to count the frequency of each character in a string.",
+    "difficulty": "Medium",
+    "answer": "Use a HashMap (or dictionary) to store each character as a key and increment its count as you iterate through the string.",
+    "example": "def char_frequency(s):\n    freq = {}\n    for ch in s:\n        freq[ch] = freq.get(ch, 0) + 1\n    return freq"
+  },
+  {
+    "id": 9,
+    "section": "coding",
+    "title": "Write a program to check if a given year is a leap year.",
+    "difficulty": "Easy",
+    "answer": "A year is a leap year if it's divisible by 4, except for century years, which must also be divisible by 400.",
+    "example": "boolean isLeap(int year){\n  return (year%4==0 && year%100!=0) || (year%400==0);\n}"
+  },
+  {
+    "id": 10,
+    "section": "hr",
+    "title": "Accenture works closely with clients \u2014 how would you handle a difficult client scenario?",
+    "difficulty": "Medium",
+    "answer": "Emphasize active listening, clarifying the client's real concern before responding, and escalating appropriately when something is outside your control, rather than promising things you can't guarantee.",
+    "example": "\"I'd first make sure I fully understand their concern by repeating it back, then address what I can control directly and loop in my lead for anything beyond my scope, keeping the client updated throughout.\""
+  },
+  {
+    "id": 11,
+    "section": "hr",
+    "title": "How do you stay updated with new technologies?",
+    "difficulty": "Easy",
+    "answer": "Mention specific, credible habits \u2014 following official documentation, building small side projects, taking structured courses, or contributing to open source \u2014 rather than a vague 'I read tech blogs.'"
+  },
+  {
+    "id": 12,
+    "section": "hr",
+    "title": "Describe a situation where you had to adapt to a sudden change.",
+    "difficulty": "Medium",
+    "answer": "Use the STAR method to describe a real change (a project scope shift, a new tool, a schedule change) and focus on the specific action you took to adapt successfully."
+  },
+  {
+    "id": 13,
+    "section": "technical",
+    "title": "What is Docker, and why is containerization useful?",
+    "difficulty": "Medium",
+    "answer": "Docker packages an application with all its dependencies into a lightweight, portable container that runs consistently across different environments. Containerization solves the 'it works on my machine' problem and is faster and more resource-efficient than full virtual machines, since containers share the host OS kernel."
+  },
+  {
+    "id": 14,
+    "section": "technical",
+    "title": "What is the difference between a monolithic and a microservices architecture?",
+    "difficulty": "Medium",
+    "answer": "A monolithic architecture builds an entire application as one single, tightly coupled deployable unit. A microservices architecture splits it into small, independently deployable services communicating over a network, improving scalability and team autonomy at the cost of added operational complexity."
+  },
+  {
+    "id": 15,
+    "section": "technical",
+    "title": "What is load balancing, and why is it needed?",
+    "difficulty": "Easy",
+    "answer": "Load balancing distributes incoming network traffic across multiple servers so no single server becomes a bottleneck, improving availability, responsiveness, and fault tolerance for applications serving many concurrent users."
+  },
+  {
+    "id": 16,
+    "section": "technical",
+    "title": "What is the difference between synchronous and asynchronous communication in distributed systems?",
+    "difficulty": "Medium",
+    "answer": "Synchronous communication requires the caller to wait for an immediate response before continuing (like a direct API call). Asynchronous communication lets the caller continue without waiting, often via message queues, with the response (or side effect) handled later \u2014 useful for decoupling services and improving resilience."
+  },
+  {
+    "id": 17,
+    "section": "technical",
+    "title": "What is a design pattern? Name one commonly used pattern and explain it briefly.",
+    "difficulty": "Medium",
+    "answer": "A design pattern is a proven, reusable solution to a common software design problem. The Singleton pattern, for example, ensures a class has only one instance and provides a global point of access to it \u2014 commonly used for things like configuration managers or connection pools."
+  },
+  {
+    "id": 18,
+    "section": "technical",
+    "title": "What is the difference between unit testing and integration testing?",
+    "difficulty": "Easy",
+    "answer": "Unit testing verifies a single function or component in isolation, usually with mocked dependencies. Integration testing verifies that multiple components work correctly together, such as a service correctly reading from and writing to an actual database."
+  },
+  {
+    "id": 19,
+    "section": "coding",
+    "title": "Write a program to find all pairs in an array that sum to a target value.",
+    "difficulty": "Medium",
+    "answer": "Use a HashSet to track visited numbers; for each element, check whether its complement (target - element) has already been seen, and record the pair if so, continuing through the whole array to catch every pair.",
+    "example": "void findAllPairs(int[] arr, int target){\n  Set<Integer> seen = new HashSet<>();\n  for(int x: arr){\n    int complement = target - x;\n    if(seen.contains(complement)) System.out.println(complement + \", \" + x);\n    seen.add(x);\n  }\n}"
+  },
+  {
+    "id": 20,
+    "section": "coding",
+    "title": "Write a program to rotate an array by k positions.",
+    "difficulty": "Medium",
+    "answer": "Reverse the entire array, then reverse the first k elements, then reverse the remaining n-k elements \u2014 this three-step reversal produces a left rotation by k in O(n) time with no extra array.",
+    "example": "void reverse(int[] arr, int start, int end){\n  while(start<end){\n    int t=arr[start]; arr[start]=arr[end]; arr[end]=t;\n    start++; end--;\n  }\n}\nvoid rotate(int[] arr, int k){\n  int n=arr.length; k%=n;\n  reverse(arr, 0, n-1);\n  reverse(arr, 0, k-1);\n  reverse(arr, k, n-1);\n}"
+  },
+  {
+    "id": 21,
+    "section": "coding",
+    "title": "Write a program to check if a linked list has a cycle.",
+    "difficulty": "Hard",
+    "answer": "Use Floyd's Cycle Detection (slow/fast pointer): move one pointer one step and another two steps at a time. If they ever meet, the list has a cycle; if the fast pointer reaches null, it doesn't.",
+    "example": "boolean hasCycle(Node head){\n  Node slow=head, fast=head;\n  while(fast != null && fast.next != null){\n    slow = slow.next;\n    fast = fast.next.next;\n    if(slow == fast) return true;\n  }\n  return false;\n}"
+  },
+  {
+    "id": 22,
+    "section": "coding",
+    "title": "Write a program to find the maximum subarray sum (Kadane's Algorithm).",
+    "difficulty": "Hard",
+    "answer": "Track the maximum sum ending at the current position, resetting it to the current element whenever the running sum drops below the element itself, while keeping a separate overall maximum.",
+    "example": "int maxSubArray(int[] arr){\n  int maxEndingHere = arr[0], maxSoFar = arr[0];\n  for(int i=1;i<arr.length;i++){\n    maxEndingHere = Math.max(arr[i], maxEndingHere + arr[i]);\n    maxSoFar = Math.max(maxSoFar, maxEndingHere);\n  }\n  return maxSoFar;\n}"
+  },
+  {
+    "id": 23,
+    "section": "coding",
+    "title": "Write a SQL query to find duplicate email addresses in a Users table.",
+    "difficulty": "Medium",
+    "answer": "Group rows by email and filter groups where more than one row shares the same email using HAVING.",
+    "example": "SELECT email, COUNT(*) AS occurrences\nFROM Users\nGROUP BY email\nHAVING COUNT(*) > 1;"
+  },
+  {
+    "id": 24,
+    "section": "coding",
+    "title": "Write a program to convert a decimal number to its binary representation.",
+    "difficulty": "Easy",
+    "answer": "Repeatedly divide the number by 2, recording each remainder, and read the remainders in reverse order to get the binary representation.",
+    "example": "String toBinary(int n){\n  StringBuilder sb = new StringBuilder();\n  while(n>0){\n    sb.append(n % 2);\n    n /= 2;\n  }\n  return sb.reverse().toString();\n}"
+  },
+  {
+    "id": 25,
+    "section": "technical",
+    "title": "What is the difference between public, private, and protected access modifiers?",
+    "difficulty": "Easy",
+    "answer": "public members are accessible from anywhere. private members are accessible only within the same class. protected members are accessible within the same class, subclasses, and (in Java) the same package \u2014 controlling how tightly encapsulated a class's internals are."
+  },
+  {
+    "id": 26,
+    "section": "technical",
+    "title": "What is an API gateway, and why is it used in a microservices architecture?",
+    "difficulty": "Medium",
+    "answer": "An API gateway is a single entry point that routes client requests to the appropriate backend microservice, while also handling cross-cutting concerns like authentication, rate limiting, and logging in one place instead of duplicating that logic in every service."
+  },
+  {
+    "id": 27,
+    "section": "technical",
+    "title": "What is the difference between vertical scaling and auto-scaling in the cloud?",
+    "difficulty": "Medium",
+    "answer": "Vertical scaling means increasing the resources (CPU, RAM) of an existing server. Auto-scaling automatically adds or removes server instances (horizontal scaling) based on real-time demand, letting an application handle traffic spikes without manual intervention."
+  },
+  {
+    "id": 28,
+    "section": "technical",
+    "title": "What is the circuit breaker pattern, and why is it used?",
+    "difficulty": "Hard",
+    "answer": "A circuit breaker monitors calls to a remote service and 'trips open' after repeated failures, immediately failing subsequent calls (instead of waiting for timeouts) until the service recovers, preventing cascading failures across a distributed system."
+  },
+  {
+    "id": 29,
+    "section": "technical",
+    "title": "What is branching in version control, and why is it useful?",
+    "difficulty": "Easy",
+    "answer": "Branching lets developers create an isolated line of development from the main codebase to work on a feature or fix without affecting others, and merge it back once it's complete and reviewed, enabling parallel work without conflicts."
+  },
+  {
+    "id": 30,
+    "section": "technical",
+    "title": "What is the difference between continuous integration and continuous deployment?",
+    "difficulty": "Medium",
+    "answer": "Continuous Integration (CI) automatically builds and tests code every time it's merged, catching integration issues early. Continuous Deployment (CD) goes a step further, automatically releasing every change that passes those tests directly to production without manual approval."
+  },
+  {
+    "id": 31,
+    "section": "technical",
+    "title": "What is the difference between a data warehouse and a regular database?",
+    "difficulty": "Medium",
+    "answer": "A regular (transactional) database is optimized for fast, frequent reads and writes of current data. A data warehouse is optimized for complex analytical queries over large volumes of historical data aggregated from multiple sources, typically updated in batches rather than in real time."
+  },
+  {
+    "id": 32,
+    "section": "technical",
+    "title": "What is the difference between cohesion and coupling in software design?",
+    "difficulty": "Medium",
+    "answer": "Cohesion measures how closely related the responsibilities within a single module are \u2014 high cohesion is good. Coupling measures how dependent modules are on each other \u2014 low coupling is good. Well-designed systems aim for high cohesion and low coupling."
+  },
+  {
+    "id": 33,
+    "section": "technical",
+    "title": "What is an event-driven architecture?",
+    "difficulty": "Medium",
+    "answer": "In an event-driven architecture, services communicate by publishing and reacting to events (state changes) rather than calling each other directly, decoupling producers from consumers and making the system easier to scale and extend."
+  },
+  {
+    "id": 34,
+    "section": "technical",
+    "title": "What is the difference between a proxy server and a reverse proxy?",
+    "difficulty": "Medium",
+    "answer": "A forward proxy sits in front of clients, forwarding their requests to the internet on their behalf (often for privacy or filtering). A reverse proxy sits in front of servers, receiving client requests and forwarding them to the appropriate backend server, commonly used for load balancing and SSL termination."
+  },
+  {
+    "id": 35,
+    "section": "technical",
+    "title": "What does eventual consistency mean, and where is it commonly used?",
+    "difficulty": "Hard",
+    "answer": "Eventual consistency guarantees that, given enough time without new updates, all replicas of a piece of data will converge to the same value \u2014 though reads immediately after a write may briefly return stale data. It's common in large-scale distributed databases like DynamoDB and Cassandra, which prioritize availability over strict consistency."
+  },
+  {
+    "id": 36,
+    "section": "technical",
+    "title": "What is the difference between smoke testing and sanity testing?",
+    "difficulty": "Easy",
+    "answer": "Smoke testing is a broad, shallow check that the most critical functions of a build work at all, usually run right after a new build is deployed. Sanity testing is a narrower, more focused check confirming that a specific bug fix or new feature works correctly, usually run after smoke testing passes."
+  },
+  {
+    "id": 37,
+    "section": "technical",
+    "title": "What is technical debt, and how is it typically managed?",
+    "difficulty": "Medium",
+    "answer": "Technical debt refers to the implied cost of quick, expedient coding shortcuts that will require rework later. It's managed by tracking it explicitly (e.g., as backlog items), allocating dedicated time each sprint for refactoring, and weighing the trade-off between short-term speed and long-term maintainability."
+  },
+  {
+    "id": 38,
+    "section": "technical",
+    "title": "What is the difference between a framework and a library?",
+    "difficulty": "Easy",
+    "answer": "A library is a set of reusable functions your code calls when it needs them \u2014 you're in control of the flow. A framework provides the overall structure and calls your code at defined extension points \u2014 the framework is in control of the flow, a concept known as inversion of control."
+  },
+  {
+    "id": 39,
+    "section": "coding",
+    "title": "Write a program to check if an array contains any duplicate elements.",
+    "difficulty": "Easy",
+    "answer": "Add each element to a HashSet; if adding an element returns false (it already existed), a duplicate has been found.",
+    "example": "boolean containsDuplicate(int[] arr){\n  Set<Integer> seen = new HashSet<>();\n  for(int x : arr){\n    if(!seen.add(x)) return true;\n  }\n  return false;\n}"
+  },
+  {
+    "id": 40,
+    "section": "coding",
+    "title": "Write a program to count the number of islands (connected groups of 1s) in a 2D grid.",
+    "difficulty": "Hard",
+    "answer": "Scan every cell; whenever an unvisited land cell (1) is found, run a DFS/BFS to mark the entire connected island as visited, and increment the island count once per new island found.",
+    "example": "void dfs(int[][] grid, int r, int c){\n  if(r<0 || c<0 || r>=grid.length || c>=grid[0].length || grid[r][c]==0) return;\n  grid[r][c] = 0;\n  dfs(grid, r+1, c); dfs(grid, r-1, c); dfs(grid, r, c+1); dfs(grid, r, c-1);\n}\nint numIslands(int[][] grid){\n  int count = 0;\n  for(int r = 0; r < grid.length; r++)\n    for(int c = 0; c < grid[0].length; c++)\n      if(grid[r][c] == 1){ count++; dfs(grid, r, c); }\n  return count;\n}"
+  },
+  {
+    "id": 41,
+    "section": "coding",
+    "title": "Write a program to implement depth-first search (DFS) on a graph.",
+    "difficulty": "Medium",
+    "answer": "Starting from a node, mark it visited and recursively (or with an explicit stack) visit each unvisited neighbor before backtracking, exploring as deep as possible along each branch first.",
+    "example": "void dfs(Map<Integer,List<Integer>> graph, int node, Set<Integer> visited){\n  if(visited.contains(node)) return;\n  visited.add(node);\n  System.out.println(node);\n  for(int neighbor : graph.getOrDefault(node, new ArrayList<>())){\n    dfs(graph, neighbor, visited);\n  }\n}"
+  },
+  {
+    "id": 42,
+    "section": "coding",
+    "title": "Write a program to find the median of two sorted arrays.",
+    "difficulty": "Hard",
+    "answer": "Merge the two arrays conceptually using a binary-search partition approach (or, for a simpler O(n) solution, merge both arrays and pick the middle element(s) directly) to find the value that splits the combined data in half.",
+    "example": "// Simpler O(n) approach\ndouble findMedian(int[] a, int[] b){\n  int[] merged = new int[a.length + b.length];\n  int i=0,j=0,k=0;\n  while(i<a.length && j<b.length) merged[k++] = a[i]<=b[j] ? a[i++] : b[j++];\n  while(i<a.length) merged[k++]=a[i++];\n  while(j<b.length) merged[k++]=b[j++];\n  int n = merged.length;\n  return n % 2 == 0 ? (merged[n/2-1]+merged[n/2])/2.0 : merged[n/2];\n}"
+  },
+  {
+    "id": 43,
+    "section": "coding",
+    "title": "Write a program to find the top-k most frequent elements in an array.",
+    "difficulty": "Medium",
+    "answer": "Count frequencies with a HashMap, then use a min-heap of size k (or sort by frequency) to keep only the k elements with the highest counts.",
+    "example": "List<Integer> topKFrequent(int[] arr, int k){\n  Map<Integer,Integer> freq = new HashMap<>();\n  for(int x : arr) freq.put(x, freq.getOrDefault(x,0)+1);\n  return freq.entrySet().stream()\n    .sorted((a,b) -> b.getValue() - a.getValue())\n    .limit(k)\n    .map(Map.Entry::getKey)\n    .collect(Collectors.toList());\n}"
+  },
+  {
+    "id": 44,
+    "section": "coding",
+    "title": "Write a program to find all permutations of a string.",
+    "difficulty": "Hard",
+    "answer": "Use backtracking: fix each character at the current position in turn, swap it into place, recursively permute the rest, then swap back before trying the next character.",
+    "example": "void permute(char[] arr, int idx, List<String> result){\n  if(idx == arr.length){ result.add(new String(arr)); return; }\n  for(int i = idx; i < arr.length; i++){\n    char t=arr[idx]; arr[idx]=arr[i]; arr[i]=t;\n    permute(arr, idx+1, result);\n    t=arr[idx]; arr[idx]=arr[i]; arr[i]=t;\n  }\n}"
+  },
+  {
+    "id": 45,
+    "section": "coding",
+    "title": "Write a SQL query to find customers who have never placed an order.",
+    "difficulty": "Medium",
+    "answer": "Use a LEFT JOIN from Customers to Orders and filter for rows where the order side is NULL, meaning no matching order exists.",
+    "example": "SELECT c.name\nFROM Customers c\nLEFT JOIN Orders o ON c.id = o.customer_id\nWHERE o.id IS NULL;"
+  },
+  {
+    "id": 46,
+    "section": "coding",
+    "title": "Write a program to check if a given integer is a palindrome without converting it to a string.",
+    "difficulty": "Easy",
+    "answer": "Reverse the number mathematically using modulo and division, then compare the reversed value to the original.",
+    "example": "boolean isPalindromeNumber(int n){\n  if(n < 0) return false;\n  int original = n, reversed = 0;\n  while(n > 0){\n    reversed = reversed * 10 + n % 10;\n    n /= 10;\n  }\n  return reversed == original;\n}"
+  },
+  {
+    "id": 47,
+    "section": "coding",
+    "title": "Write a program to find the intersection point of two singly linked lists.",
+    "difficulty": "Hard",
+    "answer": "Find the lengths of both lists, advance the pointer of the longer list by the length difference, then move both pointers together one step at a time \u2014 they'll meet exactly at the intersection node.",
+    "example": "Node getIntersection(Node a, Node b, int lenA, int lenB){\n  while(lenA > lenB){ a = a.next; lenA--; }\n  while(lenB > lenA){ b = b.next; lenB--; }\n  while(a != b){ a = a.next; b = b.next; }\n  return a;\n}"
+  },
+  {
+    "id": 48,
+    "section": "coding",
+    "title": "Write a program to implement a trie (prefix tree) with insert and search operations.",
+    "difficulty": "Hard",
+    "answer": "Each node holds a map of child characters to child nodes and a flag marking the end of a word; insert walks/creates nodes for each character, and search walks the same path checking that it fully exists and ends on a marked node.",
+    "example": "class TrieNode {\n  Map<Character, TrieNode> children = new HashMap<>();\n  boolean isEnd = false;\n}\nclass Trie {\n  TrieNode root = new TrieNode();\n  void insert(String word){\n    TrieNode node = root;\n    for(char c : word.toCharArray())\n      node = node.children.computeIfAbsent(c, k -> new TrieNode());\n    node.isEnd = true;\n  }\n}"
+  },
+  {
+    "id": 49,
+    "section": "coding",
+    "title": "Write a program to flatten a 2D matrix into a 1D array in spiral order.",
+    "difficulty": "Medium",
+    "answer": "Maintain four boundaries (top, bottom, left, right) and traverse the matrix in the order right, down, left, up, shrinking the corresponding boundary after each pass until all elements are visited.",
+    "example": "List<Integer> spiralOrder(int[][] m){\n  List<Integer> result = new ArrayList<>();\n  int top=0, bottom=m.length-1, left=0, right=m[0].length-1;\n  while(top<=bottom && left<=right){\n    for(int j=left;j<=right;j++) result.add(m[top][j]);\n    top++;\n    for(int i=top;i<=bottom;i++) result.add(m[i][right]);\n    right--;\n    if(top<=bottom){ for(int j=right;j>=left;j--) result.add(m[bottom][j]); bottom--; }\n    if(left<=right){ for(int i=bottom;i>=top;i--) result.add(m[i][left]); left++; }\n  }\n  return result;\n}"
+  },
+  {
+    "id": 50,
+    "section": "coding",
+    "title": "Write a program to count the number of words in a sentence.",
+    "difficulty": "Easy",
+    "answer": "Trim leading/trailing whitespace, split the sentence on one or more whitespace characters, and count the resulting parts.",
+    "example": "int countWords(String sentence){\n  String trimmed = sentence.trim();\n  if(trimmed.isEmpty()) return 0;\n  return trimmed.split(\"\\\\s+\").length;\n}"
+  },
+  {
+    "id": 51,
+    "section": "coding",
+    "title": "Write a program to find the length of the longest increasing subsequence in an array.",
+    "difficulty": "Hard",
+    "answer": "Use dynamic programming: dp[i] represents the longest increasing subsequence ending at index i, computed by checking all earlier indices j where arr[j] < arr[i] and taking the best dp[j] + 1.",
+    "example": "int lengthOfLIS(int[] arr){\n  int[] dp = new int[arr.length];\n  Arrays.fill(dp, 1);\n  int max = 1;\n  for(int i = 1; i < arr.length; i++){\n    for(int j = 0; j < i; j++){\n      if(arr[j] < arr[i]) dp[i] = Math.max(dp[i], dp[j]+1);\n    }\n    max = Math.max(max, dp[i]);\n  }\n  return max;\n}"
+  },
+  {
+    "id": 52,
+    "section": "coding",
+    "title": "Write a SQL query to rank employees by salary within each department.",
+    "difficulty": "Medium",
+    "answer": "Use the RANK() window function partitioned by department and ordered by salary descending to assign a rank to each employee within their department.",
+    "example": "SELECT name, dept_id, salary,\n  RANK() OVER (PARTITION BY dept_id ORDER BY salary DESC) AS salary_rank\nFROM Employee;"
+  },
+  {
+    "id": 53,
+    "section": "coding",
+    "title": "Write a program to implement a min-heap with insert and extract-min operations.",
+    "difficulty": "Hard",
+    "answer": "Store elements in an array representing a complete binary tree. Insert adds the element at the end and 'bubbles up' by swapping with its parent while smaller. Extract-min removes the root, moves the last element to the root, and 'bubbles down' by swapping with the smaller child until the heap property is restored.",
+    "example": "// Using Java's built-in min-heap\nPriorityQueue<Integer> minHeap = new PriorityQueue<>();\nminHeap.add(5); minHeap.add(2); minHeap.add(8);\nint smallest = minHeap.poll(); // 2"
+  },
+  {
+    "id": 54,
+    "section": "coding",
+    "title": "Write a program to find the equilibrium point of an array where the left sum equals the right sum.",
+    "difficulty": "Hard",
+    "answer": "Compute the total sum, then iterate while maintaining a running left sum; at each index, the right sum equals total minus left sum minus the current element, and equilibrium is where left sum equals right sum.",
+    "example": "int equilibriumIndex(int[] arr){\n  int total = 0;\n  for(int x : arr) total += x;\n  int leftSum = 0;\n  for(int i = 0; i < arr.length; i++){\n    total -= arr[i];\n    if(leftSum == total) return i;\n    leftSum += arr[i];\n  }\n  return -1;\n}"
+  },
+  {
+    "id": 55,
+    "section": "technical",
+    "title": "What is the difference between vertical partitioning and horizontal partitioning (sharding) of a database?",
+    "difficulty": "Hard",
+    "answer": "Vertical partitioning splits a table by columns, storing different columns separately \u2014 useful when some columns are accessed far more often than others. Horizontal partitioning (sharding) splits a table by rows across multiple servers, distributing the same schema across data subsets to scale storage and throughput."
+  },
+  {
+    "id": 56,
+    "section": "technical",
+    "title": "What is the difference between a linear and a non-linear data structure?",
+    "difficulty": "Easy",
+    "answer": "A linear data structure arranges elements sequentially, where each element connects to at most one previous and one next element, as in arrays, linked lists, stacks, and queues. A non-linear data structure allows elements to connect to multiple others, as in trees and graphs."
+  },
+  {
+    "id": 57,
+    "section": "technical",
+    "title": "What is a binary search tree (BST), and what property must it satisfy?",
+    "difficulty": "Medium",
+    "answer": "A BST is a binary tree where, for every node, all values in its left subtree are smaller and all values in its right subtree are larger than the node itself. This property enables O(log n) average-case search, insertion, and deletion on a balanced tree."
+  },
+  {
+    "id": 58,
+    "section": "technical",
+    "title": "What is the time complexity of common HashMap operations, and when can it degrade?",
+    "difficulty": "Medium",
+    "answer": "In the average case, get(), put(), and remove() on a HashMap run in O(1) time due to direct bucket addressing via hashing. In the worst case, with many hash collisions, this can degrade toward O(n), though modern implementations mitigate this by treeifying large buckets."
+  },
+  {
+    "id": 59,
+    "section": "technical",
+    "title": "What is a graph, and what are its two common representations?",
+    "difficulty": "Medium",
+    "answer": "A graph is a set of nodes (vertices) connected by edges, used to model relationships like networks or maps. It's commonly represented as an adjacency matrix, a 2D array marking which nodes connect, or an adjacency list, where each node stores its neighbors \u2014 adjacency lists are more memory-efficient for sparse graphs."
+  },
+  {
+    "id": 60,
+    "section": "technical",
+    "title": "What is Big-O notation, and why does it matter?",
+    "difficulty": "Medium",
+    "answer": "Big-O notation describes how an algorithm's runtime or memory usage grows as input size increases, in the worst case. It matters because it lets you compare algorithms independent of hardware, revealing which one scales better as data grows."
+  },
+  {
+    "id": 61,
+    "section": "technical",
+    "title": "What is the difference between depth-first search (DFS) and breadth-first search (BFS)?",
+    "difficulty": "Medium",
+    "answer": "DFS explores as far as possible along each branch before backtracking, typically implemented with a stack or recursion. BFS explores all neighbors at the current depth before moving deeper, typically implemented with a queue, and is better suited for finding the shortest path in an unweighted graph."
+  },
+  {
+    "id": 62,
+    "section": "technical",
+    "title": "What is recursion, and what is a base case?",
+    "difficulty": "Easy",
+    "answer": "Recursion is when a function calls itself to solve smaller instances of the same problem. The base case is the condition that stops the recursion \u2014 without it, the function would call itself infinitely and eventually cause a stack overflow."
+  },
+  {
+    "id": 63,
+    "section": "technical",
+    "title": "What is dynamic programming, and how does it differ from plain recursion?",
+    "difficulty": "Hard",
+    "answer": "Dynamic programming solves problems by breaking them into overlapping subproblems and storing (memoizing) their results so each subproblem is solved only once, rather than recomputing it repeatedly as plain recursion would \u2014 dramatically improving efficiency for problems like Fibonacci or the knapsack problem."
+  },
+  {
+    "id": 64,
+    "section": "technical",
+    "title": "What is the practical difference between a compiled language and an interpreted language at execution time?",
+    "difficulty": "Easy",
+    "answer": "A compiled language is translated fully into machine code before execution, producing a standalone binary that runs directly on hardware. An interpreted language is translated and executed line by line at runtime, making development faster to iterate but generally slower to execute."
+  },
+  {
+    "id": 65,
+    "section": "technical",
+    "title": "What is garbage collection and what problem does it solve?",
+    "difficulty": "Easy",
+    "answer": "Garbage collection automatically frees memory occupied by objects no longer referenced by the running program, solving the memory-leak problem that would otherwise occur if developers had to manually track and free every allocation, as in languages like C."
+  },
+  {
+    "id": 66,
+    "section": "technical",
+    "title": "Why is grouping data and methods in a class not enough for true encapsulation?",
+    "difficulty": "Medium",
+    "answer": "True encapsulation requires deliberately using access modifiers such as private, protected, and public to hide internal state, exposing only a controlled public interface like getters and setters, so external code can't directly corrupt an object's internal data."
+  },
+  {
+    "id": 67,
+    "section": "technical",
+    "title": "What is the difference between a function and a method?",
+    "difficulty": "Easy",
+    "answer": "A function is a standalone, reusable block of code that can be called independently. A method is a function that belongs to a class or object and typically operates on that object's data, accessed via the object itself."
+  },
+  {
+    "id": 68,
+    "section": "coding",
+    "title": "Explain, at a conceptual level, how you would design a simple LRU (Least Recently Used) cache.",
+    "difficulty": "Hard",
+    "answer": "Combine a HashMap for O(1) key lookup with a doubly linked list to track usage order. On access, move the accessed node to the front (most recently used). When capacity is exceeded, remove the node at the back (least recently used), keeping both structures in sync."
+  },
+  {
+    "id": 69,
+    "section": "coding",
+    "title": "Write a function to check if a string has all unique characters.",
+    "difficulty": "Easy",
+    "answer": "Use a HashSet (or a boolean array for a known character set like lowercase letters) to track characters seen so far, returning false the moment a repeat is found.",
+    "example": "boolean hasUniqueChars(String s){\n  Set<Character> seen = new HashSet<>();\n  for(char c : s.toCharArray()){\n    if(!seen.add(c)) return false;\n  }\n  return true;\n}"
+  },
+  {
+    "id": 70,
+    "section": "coding",
+    "title": "Write a program to find the number of ways to climb n stairs, taking 1 or 2 steps at a time.",
+    "difficulty": "Medium",
+    "answer": "This is structurally identical to the Fibonacci sequence: the number of ways to reach step n equals the ways to reach step n-1 plus the ways to reach step n-2, solvable efficiently with dynamic programming.",
+    "example": "int climbStairs(int n){\n  if(n <= 2) return n;\n  int a=1, b=2;\n  for(int i=3;i<=n;i++){\n    int c = a+b; a=b; b=c;\n  }\n  return b;\n}"
+  },
+  {
+    "id": 71,
+    "section": "coding",
+    "title": "Write a program to find the longest palindromic substring in a given string.",
+    "difficulty": "Hard",
+    "answer": "For each character (and each gap between characters, for even-length palindromes), expand outward in both directions as long as the characters match, tracking the longest palindrome found.",
+    "example": "String longestPalindrome(String s){\n  int start=0, maxLen=0;\n  for(int i=0;i<s.length();i++){\n    for(int[] range : new int[][]{{i,i},{i,i+1}}){\n      int l=range[0], r=range[1];\n      while(l>=0 && r<s.length() && s.charAt(l)==s.charAt(r)){ l--; r++; }\n      if(r-l-1 > maxLen){ maxLen = r-l-1; start = l+1; }\n    }\n  }\n  return s.substring(start, start+maxLen);\n}"
+  },
+  {
+    "id": 72,
+    "section": "coding",
+    "title": "Write a program to implement string-to-integer (atoi) conversion manually.",
+    "difficulty": "Medium",
+    "answer": "Skip leading whitespace, capture an optional sign, then read digits one at a time, building the integer by multiplying the running result by 10 and adding the next digit, stopping at the first non-digit character.",
+    "example": "int myAtoi(String s){\n  s = s.trim();\n  int i=0, sign=1, result=0;\n  if(i<s.length() && (s.charAt(i)=='+' || s.charAt(i)=='-')){\n    sign = s.charAt(i)=='-' ? -1 : 1; i++;\n  }\n  while(i<s.length() && Character.isDigit(s.charAt(i))){\n    result = result*10 + (s.charAt(i)-'0');\n    i++;\n  }\n  return sign*result;\n}"
+  },
+  {
+    "id": 73,
+    "section": "coding",
+    "title": "Write a program to find the GCD and LCM of two numbers together efficiently.",
+    "difficulty": "Easy",
+    "answer": "Compute the GCD first using the Euclidean algorithm, then derive the LCM from it using LCM(a,b) = (a*b) / GCD(a,b), avoiding redundant computation.",
+    "example": "int gcd(int a, int b){ return b==0 ? a : gcd(b, a%b); }\nvoid gcdAndLcm(int a, int b){\n  int g = gcd(a,b);\n  System.out.println(\"GCD: \"+g+\", LCM: \"+(a*b)/g);\n}"
+  },
+  {
+    "id": 74,
+    "section": "coding",
+    "title": "Write a SQL query to find the third highest salary using a window function.",
+    "difficulty": "Hard",
+    "answer": "Use DENSE_RANK() ordered by salary descending inside a subquery, then filter the outer query for rank equal to 3, which correctly handles ties unlike a plain OFFSET-based approach.",
+    "example": "SELECT salary FROM (\n  SELECT salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS rnk\n  FROM Employee\n) ranked\nWHERE rnk = 3;"
+  },
+  {
+    "id": 75,
+    "section": "coding",
+    "title": "Write a SQL query to list employees who don't manage anyone.",
+    "difficulty": "Medium",
+    "answer": "Select employees whose ID never appears as a manager_id in the same table, using a NOT IN or NOT EXISTS subquery.",
+    "example": "SELECT name FROM Employee e\nWHERE e.id NOT IN (\n  SELECT DISTINCT manager_id FROM Employee WHERE manager_id IS NOT NULL\n);"
+  },
+  {
+    "id": 76,
+    "section": "coding",
+    "title": "Write a SQL query to calculate a running total of sales by date.",
+    "difficulty": "Hard",
+    "answer": "Use a window function with SUM() OVER an ORDER BY clause, which accumulates the total across all preceding rows in date order without needing a self-join.",
+    "example": "SELECT sale_date, amount,\n  SUM(amount) OVER (ORDER BY sale_date) AS running_total\nFROM Sales\nORDER BY sale_date;"
+  },
+  {
+    "id": 77,
+    "section": "coding",
+    "title": "Write a SQL query to find the top 3 highest-paid employees in each department.",
+    "difficulty": "Hard",
+    "answer": "Use DENSE_RANK() partitioned by department and ordered by salary descending inside a subquery, then filter the outer query for rank less than or equal to 3.",
+    "example": "SELECT name, dept_id, salary FROM (\n  SELECT name, dept_id, salary,\n    DENSE_RANK() OVER (PARTITION BY dept_id ORDER BY salary DESC) AS rnk\n  FROM Employee\n) ranked\nWHERE rnk <= 3;"
+  },
+  {
+    "id": 78,
+    "section": "coding",
+    "title": "Write a program to check if a number is a palindrome without converting it to a string.",
+    "difficulty": "Medium",
+    "answer": "Reverse the number mathematically using modulo and division, then compare the reversed number to the original.",
+    "example": "boolean isPalindromeNumber(int n){\n  int original = n, reversed = 0;\n  while(n > 0){\n    reversed = reversed*10 + n%10;\n    n /= 10;\n  }\n  return original == reversed;\n}"
+  },
+  {
+    "id": 79,
+    "section": "coding",
+    "title": "Write a program to find the most frequently occurring element in an array.",
+    "difficulty": "Medium",
+    "answer": "Use a HashMap to count occurrences of each element while scanning the array once, then scan the map to find the key with the highest count.",
+    "example": "int mostFrequent(int[] arr){\n  Map<Integer,Integer> freq = new HashMap<>();\n  for(int x : arr) freq.put(x, freq.getOrDefault(x,0)+1);\n  int maxCount=0, result=arr[0];\n  for(Map.Entry<Integer,Integer> e : freq.entrySet()){\n    if(e.getValue() > maxCount){ maxCount = e.getValue(); result = e.getKey(); }\n  }\n  return result;\n}"
+  },
+  {
+    "id": 80,
+    "section": "coding",
+    "title": "Write a program to insert a node at a given position in a singly linked list.",
+    "difficulty": "Medium",
+    "answer": "Walk the list to the node just before the target position, then redirect its 'next' pointer to the new node, and set the new node's 'next' to what used to follow.",
+    "example": "void insertAt(Node head, int position, int data){\n  Node newNode = new Node(data);\n  if(position == 0){ newNode.next = head; return; }\n  Node current = head;\n  for(int i=0;i<position-1 && current!=null;i++) current = current.next;\n  newNode.next = current.next;\n  current.next = newNode;\n}"
+  }
+]

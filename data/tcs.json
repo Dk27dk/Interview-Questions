@@ -1,0 +1,612 @@
+[
+  {
+    "id": 1,
+    "section": "online-test",
+    "title": "What sections appear in the TCS NQT Foundation paper?",
+    "difficulty": "Easy",
+    "answer": "The TCS NQT Foundation section covers Numerical Ability, Verbal Ability, and Reasoning Ability. It is a qualifying section, meaning you must clear a minimum cutoff here before your Advanced (coding) section is evaluated.",
+    "tips": "Time-box each Foundation sub-section to under 12 minutes so you have buffer time for the Advanced coding section."
+  },
+  {
+    "id": 2,
+    "section": "online-test",
+    "title": "What is tested in the TCS NQT Advanced section?",
+    "difficulty": "Easy",
+    "answer": "The Advanced section includes Advanced Quantitative Aptitude, Advanced Reasoning, and two Coding problems to be solved in any of C, C++, Java, or Python.",
+    "tips": "Practice writing complete, compilable programs under time pressure rather than just pseudocode."
+  },
+  {
+    "id": 3,
+    "section": "online-test",
+    "title": "How is the TCS NQT scored and what is a safe cutoff?",
+    "difficulty": "Medium",
+    "answer": "TCS NQT uses sectional and overall cutoffs that vary slightly by year and hiring drive, but scoring above 70% in Foundation and solving at least one coding problem fully is generally considered a safe zone for shortlisting.",
+    "example": "A candidate scoring high in Verbal but skipping both coding questions is less likely to be shortlisted than one who attempts both, even with partial test cases passing."
+  },
+  {
+    "id": 4,
+    "section": "technical",
+    "title": "Explain the four pillars of Object-Oriented Programming with a real-world analogy.",
+    "difficulty": "Easy",
+    "answer": "The four pillars are Encapsulation (bundling data and methods, like a capsule medicine hiding its ingredients), Abstraction (showing only essential features, like a car's steering wheel hiding engine complexity), Inheritance (a child class reusing a parent class's features, like a Car inheriting from Vehicle), and Polymorphism (one interface, many implementations, like a 'draw()' method behaving differently for Circle and Square).",
+    "example": "class Vehicle { void move(){} } class Car extends Vehicle { void move(){ System.out.println(\"Car drives\"); } }"
+  },
+  {
+    "id": 5,
+    "section": "technical",
+    "title": "What is the difference between a Compiler and an Interpreter?",
+    "difficulty": "Easy",
+    "answer": "A compiler translates the entire source code into machine code before execution, producing a standalone executable, whereas an interpreter translates and executes code line by line without producing a separate executable. Compiled programs generally run faster; interpreted programs are easier to debug interactively.",
+    "tips": "Mention that some languages, like Java, use a hybrid model: compiled to bytecode, then interpreted/JIT-compiled by the JVM."
+  },
+  {
+    "id": 6,
+    "section": "technical",
+    "title": "What is normalization in DBMS and why is it needed?",
+    "difficulty": "Medium",
+    "answer": "Normalization is the process of organizing database tables to reduce data redundancy and avoid update, insert, and delete anomalies, typically by decomposing tables and applying rules called normal forms (1NF, 2NF, 3NF, BCNF).",
+    "example": "A single table storing 'StudentName, CourseName, ProfessorName' repeats professor data for every student in a course. Splitting it into Student, Course, and Professor tables removes that redundancy."
+  },
+  {
+    "id": 7,
+    "section": "technical",
+    "title": "Differentiate between Process and Thread.",
+    "difficulty": "Medium",
+    "answer": "A process is an independent program in execution with its own memory space, while a thread is a lightweight unit of execution within a process that shares the process's memory with other threads. Creating threads is cheaper than creating processes, and threads communicate faster since they share memory.",
+    "tips": "Give the analogy of a process as a 'building' and threads as 'people working inside sharing the same rooms.'"
+  },
+  {
+    "id": 8,
+    "section": "technical",
+    "title": "What is the difference between TCP and UDP?",
+    "difficulty": "Medium",
+    "answer": "TCP is connection-oriented, guarantees reliable, ordered delivery of data, and is used where accuracy matters (web browsing, email). UDP is connectionless, faster, does not guarantee delivery order, and is used where speed matters more than reliability (video streaming, gaming)."
+  },
+  {
+    "id": 9,
+    "section": "technical",
+    "title": "What is a deadlock and what conditions cause it?",
+    "difficulty": "Hard",
+    "answer": "A deadlock is a state where two or more processes are blocked forever, each waiting for a resource held by another. It requires four simultaneous conditions: Mutual Exclusion, Hold and Wait, No Preemption, and Circular Wait.",
+    "example": "Process A holds Resource 1 and waits for Resource 2, while Process B holds Resource 2 and waits for Resource 1 \u2014 neither can proceed."
+  },
+  {
+    "id": 10,
+    "section": "coding",
+    "title": "Write a program to check if a string is a palindrome.",
+    "difficulty": "Easy",
+    "answer": "Compare the string with its reverse; if they match, it is a palindrome.",
+    "example": "public boolean isPalindrome(String s){\n  String rev = new StringBuilder(s).reverse().toString();\n  return s.equals(rev);\n}"
+  },
+  {
+    "id": 11,
+    "section": "coding",
+    "title": "Write a program to find the factorial of a number using recursion.",
+    "difficulty": "Easy",
+    "answer": "Use a base case of 0! = 1, and recursively multiply n with factorial(n-1).",
+    "example": "int factorial(int n){\n  if(n <= 1) return 1;\n  return n * factorial(n-1);\n}"
+  },
+  {
+    "id": 12,
+    "section": "coding",
+    "title": "Write a function to find the second largest element in an array.",
+    "difficulty": "Medium",
+    "answer": "Track two variables, largest and secondLargest, in a single pass through the array, updating them as you encounter bigger elements.",
+    "example": "int secondLargest(int[] arr){\n  int first=Integer.MIN_VALUE, second=Integer.MIN_VALUE;\n  for(int x: arr){\n    if(x>first){ second=first; first=x; }\n    else if(x>second && x!=first){ second=x; }\n  }\n  return second;\n}"
+  },
+  {
+    "id": 13,
+    "section": "coding",
+    "title": "Write a program to check if two strings are anagrams.",
+    "difficulty": "Medium",
+    "answer": "Sort both strings' characters and compare, or use a frequency count array of size 26 for lowercase letters.",
+    "example": "boolean isAnagram(String a, String b){\n  char[] x=a.toCharArray(), y=b.toCharArray();\n  Arrays.sort(x); Arrays.sort(y);\n  return Arrays.equals(x,y);\n}"
+  },
+  {
+    "id": 14,
+    "section": "coding",
+    "title": "Write a program to remove duplicates from an array without using extra data structures where possible.",
+    "difficulty": "Medium",
+    "answer": "Sort the array first, then use a two-pointer technique to overwrite duplicate values in place.",
+    "example": "int removeDuplicates(int[] arr){\n  Arrays.sort(arr);\n  int j=0;\n  for(int i=1;i<arr.length;i++){\n    if(arr[i]!=arr[j]) arr[++j]=arr[i];\n  }\n  return j+1;\n}"
+  },
+  {
+    "id": 15,
+    "section": "hr",
+    "title": "Why do you want to join TCS?",
+    "difficulty": "Easy",
+    "answer": "Frame your answer around TCS's scale, learning culture, and global project exposure, and connect it to your own career goals rather than reciting generic company facts.",
+    "example": "\"TCS's scale means I can work across domains early in my career and its Initial Learning Programme gives freshers a strong technical foundation \u2014 that structured growth path aligns with where I want to take my career.\""
+  },
+  {
+    "id": 16,
+    "section": "hr",
+    "title": "Are you willing to relocate anywhere in India?",
+    "difficulty": "Easy",
+    "answer": "TCS often asks this because project allocation is pan-India. Answer honestly, but frame flexibility positively if you are open to it, since it can widen your opportunities.",
+    "tips": "If you truly have location constraints, state them clearly and briefly rather than agreeing and backing out later."
+  },
+  {
+    "id": 17,
+    "section": "hr",
+    "title": "What do you know about TCS's recent business initiatives?",
+    "difficulty": "Medium",
+    "answer": "Interviewers use this to test genuine interest. Research TCS's recent annual report highlights, major client wins, and technology focus areas (AI, cloud, cybersecurity) before the interview and mention one or two specific points.",
+    "tips": "Avoid generic answers like 'TCS is a big company' \u2014 specifics show real preparation."
+  },
+  {
+    "id": 18,
+    "section": "hr",
+    "title": "Do you have any questions for us?",
+    "difficulty": "Easy",
+    "answer": "Always ask something. Good options include questions about the onboarding/training process, typical project allocation timelines, or growth opportunities within your chosen stream \u2014 these show genuine engagement without seeming presumptuous.",
+    "example": "\"Could you tell me more about how TCS decides project allocation for freshers after the Initial Learning Programme?\""
+  },
+  {
+    "id": 19,
+    "section": "technical",
+    "title": "What is the difference between stack memory and heap memory?",
+    "difficulty": "Easy",
+    "answer": "Stack memory stores method call frames and local variables, is allocated/deallocated automatically in LIFO order, and is limited in size. Heap memory stores objects created at runtime, persists until garbage collected, and is larger but slower to access than the stack."
+  },
+  {
+    "id": 20,
+    "section": "technical",
+    "title": "What is a virtual function, and why does it matter for polymorphism?",
+    "difficulty": "Medium",
+    "answer": "A virtual function (in C++) or an overridable instance method (in Java, where methods are virtual by default) allows a subclass to provide its own implementation that gets called even when accessed through a base class reference, enabling runtime polymorphism.",
+    "example": "Base* b = new Derived();\nb->show(); // calls Derived's version if show() is virtual"
+  },
+  {
+    "id": 21,
+    "section": "technical",
+    "title": "What are the ACID properties of a database transaction?",
+    "difficulty": "Medium",
+    "answer": "Atomicity ensures a transaction either fully completes or fully rolls back. Consistency ensures the database moves only between valid states. Isolation ensures concurrent transactions don't interfere with each other. Durability ensures committed changes survive crashes or power loss."
+  },
+  {
+    "id": 22,
+    "section": "technical",
+    "title": "What is the difference between a clustered and a non-clustered index?",
+    "difficulty": "Hard",
+    "answer": "A clustered index determines the physical storage order of table rows, so a table can have only one. A non-clustered index is a separate structure holding pointers back to the actual rows, and a table can have several."
+  },
+  {
+    "id": 23,
+    "section": "technical",
+    "title": "What is REST, and how does a REST API differ from SOAP?",
+    "difficulty": "Medium",
+    "answer": "REST is an architectural style using standard HTTP methods (GET, POST, PUT, DELETE) and is typically lightweight, using JSON. SOAP is a stricter protocol using XML messaging with formal contracts (WSDL), offering built-in error handling and security standards but at the cost of more overhead."
+  },
+  {
+    "id": 24,
+    "section": "technical",
+    "title": "What is exception handling, and what is the purpose of the 'finally' block?",
+    "difficulty": "Easy",
+    "answer": "Exception handling lets a program respond to runtime errors gracefully using try-catch instead of crashing. The 'finally' block runs regardless of whether an exception occurred, typically used to release resources like file handles or database connections."
+  },
+  {
+    "id": 25,
+    "section": "coding",
+    "title": "Write a program to implement binary search on a sorted array.",
+    "difficulty": "Medium",
+    "answer": "Repeatedly compare the target with the middle element, narrowing the search range by half each time based on whether the target is smaller or larger.",
+    "example": "int binarySearch(int[] arr, int target){\n  int lo=0, hi=arr.length-1;\n  while(lo<=hi){\n    int mid=(lo+hi)/2;\n    if(arr[mid]==target) return mid;\n    else if(arr[mid]<target) lo=mid+1;\n    else hi=mid-1;\n  }\n  return -1;\n}"
+  },
+  {
+    "id": 26,
+    "section": "coding",
+    "title": "Write a program to find the transpose of a matrix.",
+    "difficulty": "Medium",
+    "answer": "The transpose swaps rows and columns \u2014 element at position [i][j] moves to [j][i] in the result matrix.",
+    "example": "int[][] transpose(int[][] m){\n  int rows=m.length, cols=m[0].length;\n  int[][] result = new int[cols][rows];\n  for(int i=0;i<rows;i++)\n    for(int j=0;j<cols;j++)\n      result[j][i]=m[i][j];\n  return result;\n}"
+  },
+  {
+    "id": 27,
+    "section": "coding",
+    "title": "Write a program to count the vowels and consonants in a string.",
+    "difficulty": "Easy",
+    "answer": "Iterate through the string, checking each alphabetic character against a set of vowels and incrementing the appropriate counter.",
+    "example": "void countVowelsConsonants(String s){\n  int vowels=0, consonants=0;\n  String vSet=\"aeiouAEIOU\";\n  for(char c: s.toCharArray()){\n    if(Character.isLetter(c)){\n      if(vSet.indexOf(c) != -1) vowels++;\n      else consonants++;\n    }\n  }\n  System.out.println(\"Vowels: \"+vowels+\", Consonants: \"+consonants);\n}"
+  },
+  {
+    "id": 28,
+    "section": "coding",
+    "title": "Write a program to swap two numbers without using a temporary variable.",
+    "difficulty": "Easy",
+    "answer": "Use arithmetic (or XOR) operations so the two variables exchange values without needing a third storage location.",
+    "example": "a = a + b;\nb = a - b;\na = a - b;\n// or using XOR:\n// a ^= b; b ^= a; a ^= b;"
+  },
+  {
+    "id": 29,
+    "section": "coding",
+    "title": "Write a program to implement bubble sort.",
+    "difficulty": "Easy",
+    "answer": "Repeatedly step through the array, swapping adjacent elements if they're in the wrong order, until a full pass requires no swaps.",
+    "example": "void bubbleSort(int[] arr){\n  for(int i=0;i<arr.length-1;i++)\n    for(int j=0;j<arr.length-1-i;j++)\n      if(arr[j]>arr[j+1]){\n        int temp=arr[j]; arr[j]=arr[j+1]; arr[j+1]=temp;\n      }\n}"
+  },
+  {
+    "id": 30,
+    "section": "coding",
+    "title": "Write a program to check if an array is sorted in ascending order.",
+    "difficulty": "Easy",
+    "answer": "Loop through the array comparing each element to the next; if any element is greater than the one after it, the array isn't sorted.",
+    "example": "boolean isSorted(int[] arr){\n  for(int i=0;i<arr.length-1;i++){\n    if(arr[i]>arr[i+1]) return false;\n  }\n  return true;\n}"
+  },
+  {
+    "id": 31,
+    "section": "technical",
+    "title": "What is the difference between an abstract class and an interface?",
+    "difficulty": "Medium",
+    "answer": "An abstract class can hold state and a mix of implemented and unimplemented methods, and a class can extend only one. An interface defines a contract (with default/static methods allowed in modern Java) but no instance state, and a class can implement several interfaces at once."
+  },
+  {
+    "id": 32,
+    "section": "technical",
+    "title": "What is thread synchronization, and why is it needed?",
+    "difficulty": "Medium",
+    "answer": "Synchronization ensures only one thread accesses a shared resource at a time, preventing race conditions where concurrent reads/writes produce inconsistent results. In Java this is commonly done with the 'synchronized' keyword on a method or block."
+  },
+  {
+    "id": 33,
+    "section": "technical",
+    "title": "What are common techniques to prevent or avoid deadlocks?",
+    "difficulty": "Hard",
+    "answer": "Common strategies include acquiring locks in a fixed global order (preventing circular wait), using timeouts on lock attempts, avoiding holding one lock while requesting another, and using higher-level concurrency utilities that manage locking internally instead of manual locks."
+  },
+  {
+    "id": 34,
+    "section": "technical",
+    "title": "What is denormalization, and when would you use it?",
+    "difficulty": "Medium",
+    "answer": "Denormalization intentionally introduces redundancy by merging normalized tables back together, trading some data duplication for faster read performance \u2014 useful in reporting or analytics systems where reads vastly outnumber writes."
+  },
+  {
+    "id": 35,
+    "section": "technical",
+    "title": "What is virtual memory?",
+    "difficulty": "Medium",
+    "answer": "Virtual memory lets a process use more memory than physically available RAM by mapping a large virtual address space onto physical memory and disk (swap space), swapping pages in and out as needed \u2014 giving each process the illusion of its own large, contiguous memory."
+  },
+  {
+    "id": 36,
+    "section": "technical",
+    "title": "What is a semaphore, and how does it differ from a mutex?",
+    "difficulty": "Hard",
+    "answer": "A semaphore is a counter-based synchronization tool that can allow a fixed number of threads to access a resource simultaneously. A mutex is essentially a binary semaphore (count of 1) that additionally enforces ownership \u2014 only the thread that locked it can unlock it."
+  },
+  {
+    "id": 37,
+    "section": "technical",
+    "title": "What is serialization, and why is it used?",
+    "difficulty": "Medium",
+    "answer": "Serialization converts an object into a storable or transmittable format (like a byte stream or JSON) so it can be saved to disk or sent over a network, and deserialization reconstructs the object from that format later.",
+    "example": "// Java: marking a class serializable\nclass User implements Serializable { String name; }"
+  },
+  {
+    "id": 38,
+    "section": "technical",
+    "title": "What is the difference between method overloading and method overriding?",
+    "difficulty": "Easy",
+    "answer": "Overloading defines multiple methods with the same name but different parameters within one class, resolved at compile time. Overriding redefines a parent class's method in a subclass with the identical signature, resolved at runtime."
+  },
+  {
+    "id": 39,
+    "section": "technical",
+    "title": "What is garbage collection, and how does it help manage memory?",
+    "difficulty": "Medium",
+    "answer": "Garbage collection automatically identifies and reclaims memory occupied by objects that are no longer reachable from any active reference, freeing developers from manual memory deallocation and preventing most memory leaks common in unmanaged languages."
+  },
+  {
+    "id": 40,
+    "section": "technical",
+    "title": "What is the difference between an array and an ArrayList?",
+    "difficulty": "Easy",
+    "answer": "An array has a fixed size set at creation and can store primitives directly, while an ArrayList is a resizable collection that only stores objects (auto-boxing primitives) and provides built-in methods like add(), remove(), and contains()."
+  },
+  {
+    "id": 41,
+    "section": "technical",
+    "title": "What is a foreign key, and what purpose does it serve?",
+    "difficulty": "Easy",
+    "answer": "A foreign key is a column (or set of columns) in one table that references the primary key of another table, enforcing referential integrity so you can't insert a value that doesn't correspond to an existing row in the referenced table."
+  },
+  {
+    "id": 42,
+    "section": "technical",
+    "title": "What is middleware in a software architecture?",
+    "difficulty": "Medium",
+    "answer": "Middleware is software that sits between an application's core logic and external systems (or between a request and a response), handling cross-cutting concerns like authentication, logging, or request parsing before the request reaches the main handler."
+  },
+  {
+    "id": 43,
+    "section": "technical",
+    "title": "What is the difference between HTTP and HTTPS?",
+    "difficulty": "Easy",
+    "answer": "HTTP transmits data in plain text, making it vulnerable to interception. HTTPS adds a TLS/SSL encryption layer on top of HTTP, securing data in transit and verifying the server's identity via a certificate."
+  },
+  {
+    "id": 44,
+    "section": "coding",
+    "title": "Write a program to find duplicate elements in an array.",
+    "difficulty": "Easy",
+    "answer": "Use a HashSet to track elements seen so far; if an element is already in the set when encountered again, it's a duplicate.",
+    "example": "void findDuplicates(int[] arr){\n  Set<Integer> seen = new HashSet<>();\n  for(int x: arr){\n    if(!seen.add(x)) System.out.println(x + \" is a duplicate\");\n  }\n}"
+  },
+  {
+    "id": 45,
+    "section": "coding",
+    "title": "Write a program to merge two sorted linked lists into one sorted linked list.",
+    "difficulty": "Medium",
+    "answer": "Use a dummy head node and repeatedly attach whichever of the two current nodes has the smaller value, advancing that list's pointer, until one list is exhausted, then attach the remainder of the other.",
+    "example": "Node mergeLists(Node a, Node b){\n  Node dummy = new Node(0), tail = dummy;\n  while(a != null && b != null){\n    if(a.val <= b.val){ tail.next = a; a = a.next; }\n    else { tail.next = b; b = b.next; }\n    tail = tail.next;\n  }\n  tail.next = (a != null) ? a : b;\n  return dummy.next;\n}"
+  },
+  {
+    "id": 46,
+    "section": "coding",
+    "title": "Write a program to find the maximum and minimum elements in an array in a single pass.",
+    "difficulty": "Easy",
+    "answer": "Initialize both max and min to the first element, then iterate once, updating each whenever a larger or smaller value is found.",
+    "example": "void findMinMax(int[] arr){\n  int max = arr[0], min = arr[0];\n  for(int x : arr){\n    if(x > max) max = x;\n    if(x < min) min = x;\n  }\n  System.out.println(\"Max: \" + max + \", Min: \" + min);\n}"
+  },
+  {
+    "id": 47,
+    "section": "coding",
+    "title": "Write a program to check if a linked list is a palindrome.",
+    "difficulty": "Medium",
+    "answer": "Find the middle using slow/fast pointers, reverse the second half, then compare it node-by-node with the first half \u2014 the list is a palindrome if all values match.",
+    "example": "boolean isPalindrome(Node head){\n  List<Integer> vals = new ArrayList<>();\n  for(Node n = head; n != null; n = n.next) vals.add(n.val);\n  int i = 0, j = vals.size()-1;\n  while(i < j){\n    if(!vals.get(i).equals(vals.get(j))) return false;\n    i++; j--;\n  }\n  return true;\n}"
+  },
+  {
+    "id": 48,
+    "section": "coding",
+    "title": "Write a program to implement quicksort.",
+    "difficulty": "Medium",
+    "answer": "Pick a pivot, partition the array so smaller elements come before it and larger ones after, then recursively sort each partition.",
+    "example": "void quickSort(int[] arr, int low, int high){\n  if(low < high){\n    int pivot = arr[high], i = low - 1;\n    for(int j = low; j < high; j++){\n      if(arr[j] < pivot){\n        i++;\n        int t = arr[i]; arr[i] = arr[j]; arr[j] = t;\n      }\n    }\n    int t = arr[i+1]; arr[i+1] = arr[high]; arr[high] = t;\n    quickSort(arr, low, i);\n    quickSort(arr, i+2, high);\n  }\n}"
+  },
+  {
+    "id": 49,
+    "section": "coding",
+    "title": "Write a program to find the kth largest element in an array.",
+    "difficulty": "Medium",
+    "answer": "Sort the array in descending order and return the element at index k-1, or use a min-heap of size k for a more efficient solution on large arrays.",
+    "example": "int kthLargest(int[] arr, int k){\n  Integer[] boxed = Arrays.stream(arr).boxed().toArray(Integer[]::new);\n  Arrays.sort(boxed, Collections.reverseOrder());\n  return boxed[k-1];\n}"
+  },
+  {
+    "id": 50,
+    "section": "coding",
+    "title": "Write a program to convert a string to an integer (like atoi) without using built-in parsing functions.",
+    "difficulty": "Medium",
+    "answer": "Iterate through the string, handling an optional leading sign, and build up the result by multiplying the running total by 10 and adding each digit's numeric value.",
+    "example": "int myAtoi(String s){\n  s = s.trim();\n  int i = 0, sign = 1, result = 0;\n  if(i < s.length() && (s.charAt(i)=='+' || s.charAt(i)=='-')){\n    sign = s.charAt(i)=='-' ? -1 : 1; i++;\n  }\n  while(i < s.length() && Character.isDigit(s.charAt(i))){\n    result = result * 10 + (s.charAt(i) - '0');\n    i++;\n  }\n  return result * sign;\n}"
+  },
+  {
+    "id": 51,
+    "section": "coding",
+    "title": "Write a program to check if two strings are permutations of each other.",
+    "difficulty": "Easy",
+    "answer": "Sort both strings' characters and compare, or count character frequencies in both and verify the counts match exactly.",
+    "example": "boolean isPermutation(String a, String b){\n  if(a.length() != b.length()) return false;\n  char[] x = a.toCharArray(), y = b.toCharArray();\n  Arrays.sort(x); Arrays.sort(y);\n  return Arrays.equals(x, y);\n}"
+  },
+  {
+    "id": 52,
+    "section": "coding",
+    "title": "Write a program to print all subsets (the power set) of a given set.",
+    "difficulty": "Hard",
+    "answer": "Use backtracking: for each element, recursively explore both including it and excluding it from the current subset, adding a copy of the subset to the results whenever a leaf of the recursion is reached.",
+    "example": "void subsets(int[] nums, int idx, List<Integer> current, List<List<Integer>> result){\n  if(idx == nums.length){\n    result.add(new ArrayList<>(current));\n    return;\n  }\n  subsets(nums, idx+1, current, result); // exclude\n  current.add(nums[idx]);\n  subsets(nums, idx+1, current, result); // include\n  current.remove(current.size()-1);\n}"
+  },
+  {
+    "id": 53,
+    "section": "coding",
+    "title": "Write a program to find the longest palindromic substring in a string.",
+    "difficulty": "Hard",
+    "answer": "For each index, expand outward in both directions treating that index (and each adjacent pair) as the center of a potential palindrome, tracking the longest one found across all centers.",
+    "example": "String longestPalindrome(String s){\n  int start = 0, maxLen = 0;\n  for(int i = 0; i < s.length(); i++){\n    for(int center = i; center <= i+1; center++){\n      int l = i, r = center;\n      while(l >= 0 && r < s.length() && s.charAt(l) == s.charAt(r)){ l--; r++; }\n      if(r - l - 1 > maxLen){ maxLen = r - l - 1; start = l + 1; }\n    }\n  }\n  return s.substring(start, start + maxLen);\n}"
+  },
+  {
+    "id": 54,
+    "section": "coding",
+    "title": "Write a program to implement a queue using two stacks.",
+    "difficulty": "Medium",
+    "answer": "Use one stack for enqueue operations. For dequeue, if a second 'output' stack is empty, pop everything from the input stack into it (reversing order), then pop from the output stack.",
+    "example": "class QueueUsingStacks {\n  Deque<Integer> in = new ArrayDeque<>(), out = new ArrayDeque<>();\n  void enqueue(int x){ in.push(x); }\n  int dequeue(){\n    if(out.isEmpty()){\n      while(!in.isEmpty()) out.push(in.pop());\n    }\n    return out.pop();\n  }\n}"
+  },
+  {
+    "id": 55,
+    "section": "coding",
+    "title": "Write a SQL query to find employees who don't belong to any department.",
+    "difficulty": "Medium",
+    "answer": "Use a LEFT JOIN from Employee to Department and filter for rows where the department side is NULL, meaning no match was found.",
+    "example": "SELECT e.name\nFROM Employee e\nLEFT JOIN Department d ON e.dept_id = d.id\nWHERE d.id IS NULL;"
+  },
+  {
+    "id": 56,
+    "section": "coding",
+    "title": "Write a program to find the equilibrium index of an array (where the sum of elements on the left equals the sum on the right).",
+    "difficulty": "Hard",
+    "answer": "Compute the total sum first, then iterate while tracking a running left sum; at each index, the right sum is total minus left sum minus the current element \u2014 an equilibrium index is where left sum equals right sum.",
+    "example": "int equilibriumIndex(int[] arr){\n  int total = 0;\n  for(int x : arr) total += x;\n  int leftSum = 0;\n  for(int i = 0; i < arr.length; i++){\n    total -= arr[i];\n    if(leftSum == total) return i;\n    leftSum += arr[i];\n  }\n  return -1;\n}"
+  },
+  {
+    "id": 57,
+    "section": "coding",
+    "title": "Write a program to print the diagonal elements of a matrix.",
+    "difficulty": "Easy",
+    "answer": "The main diagonal elements are those where the row index equals the column index, so iterate once through the matrix accessing arr[i][i].",
+    "example": "void printDiagonal(int[][] matrix){\n  for(int i = 0; i < matrix.length; i++){\n    System.out.print(matrix[i][i] + \" \");\n  }\n}"
+  },
+  {
+    "id": 58,
+    "section": "technical",
+    "title": "What is the difference between a Process and a Program?",
+    "difficulty": "Easy",
+    "answer": "A program is a passive set of instructions stored on disk, while a process is an active instance of a program in execution, with its own memory, state, and resources allocated by the OS."
+  },
+  {
+    "id": 59,
+    "section": "technical",
+    "title": "What is Round Robin scheduling in operating systems?",
+    "difficulty": "Medium",
+    "answer": "Round Robin is a preemptive CPU scheduling algorithm that gives each process a fixed time slice (quantum) in cyclic order, preventing any single process from monopolizing the CPU and ensuring fair response time for all processes."
+  },
+  {
+    "id": 60,
+    "section": "technical",
+    "title": "What is thrashing in operating systems?",
+    "difficulty": "Hard",
+    "answer": "Thrashing occurs when a system spends more time swapping pages in and out of memory than executing actual instructions, usually because too many processes are competing for too little RAM, causing severe performance degradation."
+  },
+  {
+    "id": 61,
+    "section": "technical",
+    "title": "What is the difference between a Primary Key and a Unique Key?",
+    "difficulty": "Easy",
+    "answer": "A Primary Key uniquely identifies each row, cannot be NULL, and a table can have only one. A Unique Key also enforces uniqueness but can allow one NULL value in most databases, and a table can have multiple unique keys."
+  },
+  {
+    "id": 62,
+    "section": "technical",
+    "title": "What is a trigger in SQL?",
+    "difficulty": "Medium",
+    "answer": "A trigger is a stored procedure that automatically executes in response to a specific event (INSERT, UPDATE, DELETE) on a table, commonly used for auditing, enforcing business rules, or maintaining derived data."
+  },
+  {
+    "id": 63,
+    "section": "technical",
+    "title": "What is a view in SQL, and why would you use one?",
+    "difficulty": "Easy",
+    "answer": "A view is a virtual table defined by a stored query. It simplifies complex joins for repeated use, can restrict access to specific columns or rows for security, and presents data without duplicating storage."
+  },
+  {
+    "id": 64,
+    "section": "technical",
+    "title": "What is denormalization and when is it useful?",
+    "difficulty": "Medium",
+    "answer": "Denormalization intentionally introduces redundancy by merging normalized tables, trading some data-integrity risk for faster read performance \u2014 commonly used in reporting and analytics systems where reads vastly outnumber writes."
+  },
+  {
+    "id": 65,
+    "section": "technical",
+    "title": "How does a TCP three-way handshake differ from UDP's connectionless approach?",
+    "difficulty": "Medium",
+    "answer": "TCP uses a three-way handshake (SYN, SYN-ACK, ACK) to establish a reliable connection before any data transfer. UDP has no handshake at all \u2014 it simply sends datagrams without establishing or confirming a connection, trading reliability for speed."
+  },
+  {
+    "id": 66,
+    "section": "technical",
+    "title": "What is a subnet mask, and what is it used for?",
+    "difficulty": "Easy",
+    "answer": "A subnet mask distinguishes the network portion of an IP address from the host portion, letting routers determine whether traffic should stay within the local network or be forwarded elsewhere."
+  },
+  {
+    "id": 67,
+    "section": "technical",
+    "title": "What is the difference between a router and a switch?",
+    "difficulty": "Easy",
+    "answer": "A switch connects devices within the same local network and forwards data based on MAC addresses. A router connects different networks together, such as a LAN to the internet, and forwards data based on IP addresses."
+  },
+  {
+    "id": 68,
+    "section": "technical",
+    "title": "What is encapsulation, and why is it valuable in software design?",
+    "difficulty": "Easy",
+    "answer": "Encapsulation bundles data and the methods that operate on it within a class, hiding internal implementation details behind a public interface. This protects data integrity and lets internal implementation change without breaking dependent code."
+  },
+  {
+    "id": 69,
+    "section": "technical",
+    "title": "What is the difference between composition and inheritance?",
+    "difficulty": "Medium",
+    "answer": "Inheritance models an 'is-a' relationship, where a subclass extends a parent class. Composition models a 'has-a' relationship, where a class contains instances of other classes as fields. Composition is often preferred since it avoids tight coupling to a rigid class hierarchy."
+  },
+  {
+    "id": 70,
+    "section": "coding",
+    "title": "Write a program to find the largest element in an array without using a library function.",
+    "difficulty": "Easy",
+    "answer": "Initialize a variable with the first element, then iterate through the array, updating it whenever a larger value is found.",
+    "example": "int findMax(int[] arr){\n  int max = arr[0];\n  for(int i=1;i<arr.length;i++){\n    if(arr[i] > max) max = arr[i];\n  }\n  return max;\n}"
+  },
+  {
+    "id": 71,
+    "section": "coding",
+    "title": "Write a program to find the smallest and largest elements in a single pass.",
+    "difficulty": "Easy",
+    "answer": "Track both a min and max variable simultaneously while iterating once through the array, updating either as needed for each element.",
+    "example": "void findMinMax(int[] arr){\n  int min = arr[0], max = arr[0];\n  for(int x : arr){\n    if(x < min) min = x;\n    if(x > max) max = x;\n  }\n  System.out.println(\"Min: \"+min+\", Max: \"+max);\n}"
+  },
+  {
+    "id": 72,
+    "section": "coding",
+    "title": "Write a program to check if a number is a power of two.",
+    "difficulty": "Medium",
+    "answer": "A power of two has exactly one bit set in its binary representation, so n & (n-1) equals zero only for powers of two (and n must be positive).",
+    "example": "boolean isPowerOfTwo(int n){\n  return n > 0 && (n & (n - 1)) == 0;\n}"
+  },
+  {
+    "id": 73,
+    "section": "coding",
+    "title": "Write a program to compute the sum of the first n natural numbers using both a loop and a formula.",
+    "difficulty": "Easy",
+    "answer": "The loop approach adds numbers one at a time; the formula approach uses n*(n+1)/2 for an O(1) calculation instead of O(n).",
+    "example": "int sumLoop(int n){\n  int sum=0;\n  for(int i=1;i<=n;i++) sum+=i;\n  return sum;\n}\nint sumFormula(int n){\n  return n*(n+1)/2;\n}"
+  },
+  {
+    "id": 74,
+    "section": "coding",
+    "title": "Write a program to print all prime numbers up to n using the Sieve of Eratosthenes.",
+    "difficulty": "Medium",
+    "answer": "Create a boolean array marking numbers as prime by default, then for every prime found, mark all its multiples as non-prime, which is far faster than checking each number individually.",
+    "example": "void sieve(int n){\n  boolean[] isComposite = new boolean[n+1];\n  for(int i=2;i*i<=n;i++){\n    if(!isComposite[i]){\n      for(int j=i*i;j<=n;j+=i) isComposite[j]=true;\n    }\n  }\n  for(int i=2;i<=n;i++) if(!isComposite[i]) System.out.print(i+\" \");\n}"
+  },
+  {
+    "id": 75,
+    "section": "coding",
+    "title": "Write a program to find the LCM of two numbers.",
+    "difficulty": "Easy",
+    "answer": "The LCM can be derived from the GCD using the relationship LCM(a,b) = (a * b) / GCD(a,b).",
+    "example": "int gcd(int a, int b){ return b==0 ? a : gcd(b, a%b); }\nint lcm(int a, int b){ return (a*b)/gcd(a,b); }"
+  },
+  {
+    "id": 76,
+    "section": "coding",
+    "title": "Write a program to convert a string to uppercase without using a built-in function.",
+    "difficulty": "Easy",
+    "answer": "For each lowercase letter, subtract the difference between lowercase 'a' and uppercase 'A' in the ASCII table to shift it to its uppercase equivalent.",
+    "example": "String toUpper(String s){\n  StringBuilder sb = new StringBuilder();\n  for(char c : s.toCharArray()){\n    if(c >= 'a' && c <= 'z') sb.append((char)(c - 32));\n    else sb.append(c);\n  }\n  return sb.toString();\n}"
+  },
+  {
+    "id": 77,
+    "section": "coding",
+    "title": "Write a program to count the occurrences of a given word in a sentence.",
+    "difficulty": "Easy",
+    "answer": "Split the sentence into words on whitespace, then compare each word against the target word (case-insensitively) and increment a counter on each match.",
+    "example": "int countWord(String sentence, String word){\n  String[] words = sentence.toLowerCase().split(\"\\\\s+\");\n  int count = 0;\n  for(String w : words) if(w.equals(word.toLowerCase())) count++;\n  return count;\n}"
+  },
+  {
+    "id": 78,
+    "section": "coding",
+    "title": "Write a program to find the middle element of a linked list in a single pass.",
+    "difficulty": "Medium",
+    "answer": "Use the slow/fast pointer technique: move the slow pointer one step and the fast pointer two steps at a time. When the fast pointer reaches the end, the slow pointer is at the middle.",
+    "example": "Node findMiddle(Node head){\n  Node slow = head, fast = head;\n  while(fast != null && fast.next != null){\n    slow = slow.next;\n    fast = fast.next.next;\n  }\n  return slow;\n}"
+  },
+  {
+    "id": 79,
+    "section": "coding",
+    "title": "Write a program to delete a node from a singly linked list given only a pointer to that node (not the head).",
+    "difficulty": "Hard",
+    "answer": "Since you can't access the previous node, copy the next node's data into the current node, then point the current node's 'next' to skip over the (now duplicate) next node, effectively deleting it.",
+    "example": "void deleteNode(Node node){\n  node.data = node.next.data;\n  node.next = node.next.next;\n}"
+  },
+  {
+    "id": 80,
+    "section": "coding",
+    "title": "Write a program to remove duplicate values from a sorted linked list.",
+    "difficulty": "Medium",
+    "answer": "Since the list is sorted, duplicates are always adjacent \u2014 walk through the list and skip over any node whose value equals the value of the node right before it.",
+    "example": "void removeDuplicates(Node head){\n  Node current = head;\n  while(current != null && current.next != null){\n    if(current.data == current.next.data){\n      current.next = current.next.next;\n    } else {\n      current = current.next;\n    }\n  }\n}"
+  }
+]
